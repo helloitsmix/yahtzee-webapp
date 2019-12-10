@@ -1,0 +1,20 @@
+{
+	"short_name": "Yathzee",
+	"name": "Mix's Yathzee App",
+	"icons": [
+	  {
+		"src": "/img/yathzeeicon-192.png",
+		"type": "image/png",
+		"sizes": "192x192"
+	  },
+	  {
+		"src": "/img/yathzeeicon-512.png",
+		"type": "image/png",
+		"sizes": "512x512"
+	  }
+	],
+	"start_url": "/index.html",
+	"background_color": "#99E4ED",
+	"display": "fullscreen",
+	"orientation": "portrait"
+}
