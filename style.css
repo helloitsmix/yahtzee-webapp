@@ -1,0 +1,33 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+table {
+    margin: auto;
+    border-collapse: collapse;
+}
+td {
+    border: 1px black solid;
+    width: 50px;
+    height: 50px;
+}
+input {
+    height: 50px;
+    width: 50px;
+    border: 0;
+    font-size: 25px;
+    text-align: center;
+}
+input:disabled {
+      background: #cfcfcf;
+}
+.center {
+    text-align: center;
+}
+.no-border {
+        border: 0;
+}
+.bonus {
+    border: 3px solid black;
+}
