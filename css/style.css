@@ -31,3 +31,7 @@ input:disabled {
 .bonus {
     border: 3px solid black;
 }
+
+.highlight-yellow {
+    background-color: #ffd64f;
+}

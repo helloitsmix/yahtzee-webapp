@@ -7,6 +7,7 @@
 	<title>Yathzee</title>
 	<link rel="manifest" href="manifest.json">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -80,17 +81,94 @@
 		
 		<tr class="bonus">
 			<td class="center no-border">B</td>
-			<td class="scendere"> <input type="tel" name="scendere-bonus" maxlength="3" readonly> </td>
-			<td class="salire"> <input type="tel" name="salire-bonus" maxlength="3" readonly> </td>
-			<td class="liberi"> <input type="tel" name="liberi-bonus" maxlength="3" readonly> </td>
-			<td class="secchi"> <input type="tel" name="secchi-bonus" maxlength="3" readonly> </td>
-			<td class="annunciati"> <input type="tel" name="annunciati-bonus" maxlength="3" readonly> </td>
+			<td class="scendere-bonus"> <input type="tel" name="scendere-bonus" maxlength="3" readonly> </td>
+			<td class="salire-bonus"> <input type="tel" name="salire-bonus" maxlength="3" readonly> </td>
+			<td class="liberi-bonus"> <input type="tel" name="liberi-bonus" maxlength="3" readonly> </td>
+			<td class="secchi-bonus"> <input type="tel" name="secchi-bonus" maxlength="3" readonly> </td>
+			<td class="annunciati-bonus"> <input type="tel" name="annunciati-bonus" maxlength="3" readonly> </td>
 			<td class="center no-border">x2</td>
 		</tr>
+		
+		<tr class="combo">
+			<td class="center no-border">S</td>
+			<td class="scendere"> <input type="tel" name="scendere-input" maxlength="2" disabled> </td>
+			<td class="salire"> <input type="tel" name="salire-input" maxlength="2" disabled> </td>
+			<td class="liberi"> <input type="tel" name="liberi-input" maxlength="2"> </td>
+			<td class="secchi"> <input type="tel" name="secchi-input" maxlength="2"> </td>
+			<td class="annunciati"> <input type="tel" name="annunciati-input" maxlength="2"> </td>
+			<td class="center no-border">+30</td>
+		</tr>
+		<tr class="combo">
+			<td class="center no-border">F</td>
+			<td class="scendere"> <input type="tel" name="scendere-input" maxlength="2" disabled> </td>
+			<td class="salire"> <input type="tel" name="salire-input" maxlength="2" disabled> </td>
+			<td class="liberi"> <input type="tel" name="liberi-input" maxlength="2"> </td>
+			<td class="secchi"> <input type="tel" name="secchi-input" maxlength="2"> </td>
+			<td class="annunciati"> <input type="tel" name="annunciati-input" maxlength="2"> </td>
+			<td class="center no-border">+30</td>
+		</tr>
+		<tr class="combo">
+			<td class="center no-border">P</td>
+			<td class="scendere"> <input type="tel" name="scendere-input" maxlength="2" disabled> </td>
+			<td class="salire"> <input type="tel" name="salire-input" maxlength="2" disabled> </td>
+			<td class="liberi"> <input type="tel" name="liberi-input" maxlength="2"> </td>
+			<td class="secchi"> <input type="tel" name="secchi-input" maxlength="2"> </td>
+			<td class="annunciati"> <input type="tel" name="annunciati-input" maxlength="2"> </td>
+			<td class="center no-border">+20</td>
+		</tr>
+		<tr class="combo">
+			<td class="center no-border">m</td>
+			<td class="scendere"> <input type="tel" name="scendere-input" maxlength="2" disabled> </td>
+			<td class="salire"> <input type="tel" name="salire-input" maxlength="2" disabled> </td>
+			<td class="liberi"> <input type="tel" name="liberi-input" maxlength="2"> </td>
+			<td class="secchi"> <input type="tel" name="secchi-input" maxlength="2"> </td>
+			<td class="annunciati"> <input type="tel" name="annunciati-input" maxlength="2"> </td>
+			<td class="center no-border"></td>
+		</tr>
+		<tr class="combo">
+			<td class="center no-border">M</td>
+			<td class="scendere"> <input type="tel" name="scendere-input" maxlength="2" disabled> </td>
+			<td class="salire"> <input type="tel" name="salire-input" maxlength="2" disabled> </td>
+			<td class="liberi"> <input type="tel" name="liberi-input" maxlength="2"> </td>
+			<td class="secchi"> <input type="tel" name="secchi-input" maxlength="2"> </td>
+			<td class="annunciati"> <input type="tel" name="annunciati-input" maxlength="2"> </td>
+			<td class="center no-border"></td>
+		</tr>
+		<tr class="combo">
+			<td class="center no-border">Y</td>
+			<td class="scendere"> <input type="tel" name="scendere-input" maxlength="2" disabled> </td>
+			<td class="salire"> <input type="tel" name="salire-input" maxlength="2"> </td>
+			<td class="liberi"> <input type="tel" name="liberi-input" maxlength="2"> </td>
+			<td class="secchi"> <input type="tel" name="secchi-input" maxlength="2"> </td>
+			<td class="annunciati"> <input type="tel" name="annunciati-input" maxlength="2"> </td>
+			<td class="center no-border">+50</td>
+		</tr>
+		
+		<tr>
+			<td class="no-border"></td>
+			<td class="no-border"></td>
+			<td class="no-border"></td>
+			<td class="no-border"></td>
+			<td class="center no-border">x2</td>
+			<td class="center no-border">x3</td>
+			<td class="no-border"></td>
+		</tr>
+		
+		<tr class="totale">
+			<td class="center no-border"></td>
+			<td class="scendere-totale"> <input type="tel" name="scendere-input" maxlength="3" readonly> </td>
+			<td class="salire-totale"> <input type="tel" name="salire-input" maxlength="3" readonly> </td>
+			<td class="liberi-totale"> <input type="tel" name="liberi-input" maxlength="3" readonly> </td>
+			<td class="secchi-totale"> <input type="tel" name="secchi-input" maxlength="4" readonly> </td>
+			<td class="annunciati-totale"> <input type="tel" name="annunciati-input" maxlength="4" readonly> </td>
+			<td class="center no-border"></td>
+		</tr>
+
 
     </table>
     
 	<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
 	<script src="js/main.js"></script>
 
 </body>
