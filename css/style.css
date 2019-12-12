@@ -33,5 +33,17 @@ input:disabled {
 }
 
 .highlight-yellow {
-    background-color: #ffd64f;
+    background-color: #fec107;
+}
+.highlight-green {
+    background-color: #8bc24a;
+}
+.highlight-blue {
+    background-color: #00bcd5;
+}
+.highlight-pink {
+    background-color: #f06292;
+}
+.highlight-red {
+    background-color: #fe5722;
 }

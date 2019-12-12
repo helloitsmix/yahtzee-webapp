@@ -6,22 +6,41 @@ let nomiColonne = [
     'annunciati'
 ];
 
+let colori = [
+    'yellow',
+    'green',
+    'blue',
+    'pink',
+    'red',
+];
+
+let intervalloCalcoloAggiunto = null;
+
 let Setup = () => {
     
     // $('.numeri input, .combo input').val(''); TUTTE LE CASELLE TORNANO VUOTE
     $('.bonus input').val(0);
-    
-    nomiColonne.forEach(nomeColonna => { 
-        $('.numeri .' + nomeColonna + ' input').on('input propertychange', () => {
-            CalcoloBonus();
-        });
+
+    $('.scendere input').on('input propertychange', () => { // CASELLE A SCENDERE
+        UpDownUnlock();
+    });
+    $('.salire input').on('input propertychange', () => { // CASELLE A SALIRE
+        UpDownUnlock();
+    });
+    $('.numeri input').on('input propertychange', () => { // TUTTE LE CASELLE NUMERI 1-6
+        CalcoloBonus();
     });
 
-    $("input[name='salire-input']").on('input propertychange', () => {
-        UpDownUnlock();
+    $('.scala input, .full input, .poker input, .yaz input').keyup( e => { // TUTTE LE CASELLE COMBO CON "+XX" PUNTI
+        clearInterval(intervalloCalcoloAggiunto)
+        intervalloCalcoloAggiunto = setInterval(function() {
+            CalcoloAggiunto(e.target);
+            clearInterval(intervalloCalcoloAggiunto)
+        }, 500);
     });
-    $("input[name='scendere-input']").on('input propertychange', () => {
-        UpDownUnlock();
+    
+    $('.numeri input, .combo input').on('focusout propertychange', (e) => { // TUTTE LE CASELLE, NUMERI + COMBO
+        TotaleCheck(e.target);
     });
 
 };
@@ -61,6 +80,39 @@ let UpDownUnlock = () => {
             return false;
         }
 
+    });
+
+};
+
+let CalcoloAggiunto = item => {
+
+    let riga = $(item).parent().parent().attr('class');
+    if(!isNaN( parseInt( $(item).val())) && parseInt( $(item).val()) > 0)
+        $(item).val(riga == 'combo scala' || riga == 'combo full' ? parseInt($(item).val()) + 30 : riga == 'combo poker' ? parseInt($(item).val()) + 20 : parseInt($(item).val()) + 50);
+
+};
+
+let TotaleCheck = item => {
+
+    $('.' + $(item).parent().attr('class') + ' input').each( (index, item) => {
+
+        if ( isNaN( parseInt( $(item).val() )) ) {
+            return false;
+        } else if( index == 11) {
+
+            if (isNaN(parseInt($('.'+$(item).parent().attr('class')+'-totale input').val())))
+            {
+                let random = Math.floor(Math.random() * colori.length);
+                Animate($(item).parent().attr('class'),'highlight-' + colori[random] + '');
+                colori.splice(random, 1);
+            }
+            else
+            {
+                CalcoloTotale($(item).parent().attr('class'), '');
+            }
+
+        }
+        
     });
 
 };
@@ -108,9 +160,3 @@ let CalcoloTotale = (nomeColonna, classe) => {
 };
 
 Setup();
-
-
-// TODO
-// function ControlloColonnaCompletata
-// if (colonna completata) {
-// Animate('liberi', 'highlight-yellow'); }
