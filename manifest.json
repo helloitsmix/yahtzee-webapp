@@ -1,20 +1,22 @@
 {
-	"short_name": "Yathzee",
-	"name": "Mix's Yathzee App",
+	"short_name": "Yahtzee",
+	"name": "Yahtzee WebApp Game",
 	"icons": [
 	  {
-		"src": "/img/yathzeeicon-192.png",
+		"src": "/Yahtzee/img/yathzeeicon-192.png",
 		"type": "image/png",
 		"sizes": "192x192"
 	  },
 	  {
-		"src": "/img/yathzeeicon-512.png",
+		"src": "/Yahtzee/img/yathzeeicon-512.png",
 		"type": "image/png",
 		"sizes": "512x512"
 	  }
 	],
-	"start_url": "/index.html",
-	"background_color": "#99E4ED",
+	"start_url": "/Yahtzee/",
+	"scope": "/Yahtzee/",
+	"background_color": "#51A687",
+	"theme_color": "#51A687",
 	"display": "fullscreen",
 	"orientation": "portrait"
 }
