@@ -26,12 +26,44 @@ $('#settings-closebtn').click(function(e) {
     return false;
 });
 
-$('#nuova-partita').click(function(e) { 
-    $('.numeri input, .combo input').val(''); // TUTTE LE CASELLE TORNANO VUOTE
-    $('.bonus input').val(0);
-    $('.settings-page').removeClass('open');
+$('#nuova-partita').click(function(e) {
+    NuovaPartita();
+
     return false;
 });
+
+let NuovaPartita = () => {
+    colori = [
+        'yellow',
+        'green',
+        'blue',
+        'pink',
+        'red',
+    ];
+
+    $('.numeri input, .combo input').val(''); // TUTTE LE CASELLE TORNANO VUOTE
+    $('.bonus input').val(0);
+    $('.bonus input').attr('class', 'bonus-bg-sopra');
+    
+    $('.scendere input').prop('disabled', true);
+    $('.scendere input').eq(0).prop('disabled', false);
+    
+    $('.salire input').prop('disabled', true);
+    $('.salire input').eq(11).prop('disabled', false);
+    
+    $('.totale input').val('');
+    $('.totale input').removeClass('highlight-yellow');
+    $('.totale input').removeClass('highlight-green');
+    $('.totale input').removeClass('highlight-blue');
+    $('.totale input').removeClass('highlight-pink');
+    $('.totale input').removeClass('highlight-red');
+
+    $('.input-risultato-finale').val('RISULTATO');
+    $('.input-risultato-finale').removeClass('active');
+    $('.input-risultato-finale').prop('disabled', true);
+
+    $('.settings-page').removeClass('open');
+};
 
 let Setup = () => {
     
@@ -74,7 +106,13 @@ let CalcoloBonus = () => {
             if ( !isNaN( parseInt( $(item).val() )))
                 bonusPoints += parseInt( $(item).val() );
         });
-        $('.bonus .' + nomeColonna + '-bonus input').val(bonusPoints >= 60 ? bonusPoints * 2 : bonusPoints);
+        if ( bonusPoints >= 60 ) {
+            $('.bonus .' + nomeColonna + '-bonus input').val(bonusPoints * 2);
+            $('.bonus .' + nomeColonna + '-bonus input').attr('class', 'bonus-bg-sopra');
+        } else {
+            $('.bonus .' + nomeColonna + '-bonus input').val(bonusPoints);
+            $('.bonus .' + nomeColonna + '-bonus input').attr('class', 'bonus-bg-sotto');
+        }
 
     });
 
@@ -186,7 +224,7 @@ let RisultatoCheck = () => {
             if ( isNaN( parseInt( $(item).val() )) ) {
                 return false;
             } else if( index == 4) {
-                $('.input-risultato-finale').prop("disabled", false);
+                $('.input-risultato-finale').prop('disabled', false);
                 $('.input-risultato-finale').addClass('active',1000)
                 
             }

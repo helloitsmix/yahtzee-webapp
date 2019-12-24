@@ -29,12 +29,17 @@ input:disabled {
     text-align: center;
 }
 .no-border {
-        border: 0;
+    border: 0;
 }
 .bonus {
     border: 3px solid black;
 }
-
+.bonus-bg-sopra {
+    background: #d3cff3;
+}
+.bonus-bg-sotto {
+    background: #b3afce;
+}
 .highlight-yellow {
     background-color: #fec107;
 }
@@ -117,7 +122,7 @@ input:disabled {
     width: 200px;
     height: 50px;
     background: #cfcfcf;
-    font-size: 30px !important;
+    font-size: 15px;
     border-radius: 5px;
     box-sizing: border-box;
 
@@ -126,8 +131,12 @@ input:disabled {
 .risultato-finale .input-risultato-finale:disabled {
     color: #222222;
 }
+.risultato-finale .input-risultato-finale:focus {
+    outline: none;
+}
 .risultato-finale .active {
     background: #c62828 !important;
+    font-size: 25px !important;
     font-weight: 500;
     color: white;
 }
