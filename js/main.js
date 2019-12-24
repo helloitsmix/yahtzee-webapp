@@ -16,9 +16,25 @@ let colori = [
 
 let intervalloCalcoloAggiunto = null;
 
+$('#settings-link').click(function(e) { 
+    $('.settings-page').addClass('open');
+    return false;
+});
+
+$('#settings-closebtn').click(function(e) { 
+    $('.settings-page').removeClass('open');
+    return false;
+});
+
+$('#nuova-partita').click(function(e) { 
+    $('.numeri input, .combo input').val(''); // TUTTE LE CASELLE TORNANO VUOTE
+    $('.bonus input').val(0);
+    $('.settings-page').removeClass('open');
+    return false;
+});
+
 let Setup = () => {
     
-    // $('.numeri input, .combo input').val(''); TUTTE LE CASELLE TORNANO VUOTE
     $('.bonus input').val(0);
 
     $('.scendere input').on('input propertychange', () => { // CASELLE A SCENDERE
@@ -41,6 +57,10 @@ let Setup = () => {
     
     $('.numeri input, .combo input').on('focusout propertychange', (e) => { // TUTTE LE CASELLE, NUMERI + COMBO
         TotaleCheck(e.target);
+    });
+
+    $('.numeri input, .combo input').on('focusout propertychange', (e) => { // TUTTE LE CASELLE, NUMERI + COMBO
+        RisultatoCheck();
     });
 
 };
@@ -158,5 +178,44 @@ let CalcoloTotale = (nomeColonna, classe) => {
     });
 
 };
+
+let RisultatoCheck = () => {
+
+    setTimeout(function() {
+        $('.totale input').each( (index, item) => {
+            if ( isNaN( parseInt( $(item).val() )) ) {
+                return false;
+            } else if( index == 4) {
+                $('.input-risultato-finale').prop("disabled", false);
+                $('.input-risultato-finale').addClass('active',1000)
+                
+            }
+        });
+    }, 3000);
+    
+};
+
+$('.input-risultato-finale').click( () => { 
+    
+    let totalPoints = 0;
+    
+    $('.totale input').each( (index, item) => {
+        if ( !isNaN( parseInt( $(item).val() )))
+                totalPoints += parseInt( $(item).val() );
+    });
+
+    $({percentage: 0}).stop(true).animate({percentage: totalPoints}, {
+        duration : 2700,
+        easing: "easeOutExpo",
+        step: function () {
+            var percentageVal = Math.round(this.percentage);
+            $('.input-risultato-finale').val(percentageVal);
+        }
+    }).promise().done(function () {
+        // hard set the value after animation is done to be sure the value is correct
+        $('.input-risultato-finale').val(totalPoints);
+    });
+
+});
 
 Setup();

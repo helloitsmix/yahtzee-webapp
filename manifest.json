@@ -14,7 +14,6 @@
 	  }
 	],
 	"start_url": "/Yahtzee/",
-	"scope": "/Yahtzee/",
 	"background_color": "#51A687",
 	"theme_color": "#51A687",
 	"display": "fullscreen",
