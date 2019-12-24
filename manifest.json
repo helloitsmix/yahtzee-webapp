@@ -1,19 +1,20 @@
 {
 	"short_name": "Yahtzee",
-	"name": "Yahtzee WebApp Game",
+	"name": "Yahtzee Game WebApp",
 	"icons": [
 	  {
-		"src": "/Yahtzee/img/yathzeeicon-192.png",
+		"src": "/Yahtzee/img/yahtzeeicon-192.png",
 		"type": "image/png",
 		"sizes": "192x192"
 	  },
 	  {
-		"src": "/Yahtzee/img/yathzeeicon-512.png",
+		"src": "/Yahtzee/img/yahtzeeicon-512.png",
 		"type": "image/png",
 		"sizes": "512x512"
 	  }
 	],
 	"start_url": "/Yahtzee/",
+	"scope": "/Yahtzee/",
 	"background_color": "#51A687",
 	"theme_color": "#51A687",
 	"display": "fullscreen",
