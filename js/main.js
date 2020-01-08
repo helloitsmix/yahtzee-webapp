@@ -16,6 +16,15 @@ let colori = [
 
 let intervalloCalcoloAggiunto = null;
 
+// CONFERMA IL RELOAD PAGINA
+// window.addEventListener('beforeunload', (event) => {
+//     event.preventDefault();
+//     event.returnValue = '';
+// });
+
+// swiperefreshLayout.setRefreshing(false);
+// swiperefreshLayout.setEnabled(false);
+
 $('#settings-link').click(function(e) { 
     $('.settings-page').addClass('open');
     return false;
@@ -26,10 +35,32 @@ $('#settings-closebtn').click(function(e) {
     return false;
 });
 
-$('#nuova-partita').click(function(e) {
-    NuovaPartita();
-
+$('#riprendi').click(function(e) {
+    $('.settings-page').removeClass('open');
     return false;
+});
+
+$('#nuova-partita').click(function(e) {
+    if (confirm("Sei sicuro di voler cominciare una nuova partita?") == true) {
+        NuovaPartita();
+    }
+    return false;
+});
+
+
+$('#grandezza-griglia').click(function(e) {
+    if ( $('#grandezza-griglia').text() == 'Griglia Large' )
+    {
+        $('#grandezza-griglia').text('Griglia Small');
+        $('table').addClass('small');
+        $('.risultato-finale').addClass('small-btn');
+    }
+    else
+    {
+        $('#grandezza-griglia').text('Griglia Large');
+        $('table').removeClass('small');
+        $('.risultato-finale').removeClass('small-btn');
+    }
 });
 
 let NuovaPartita = () => {
@@ -84,7 +115,7 @@ let Setup = () => {
         intervalloCalcoloAggiunto = setInterval(function() {
             CalcoloAggiunto(e.target);
             clearInterval(intervalloCalcoloAggiunto)
-        }, 500);
+        }, 1000);
     });
     
     $('.numeri input, .combo input').on('focusout propertychange', (e) => { // TUTTE LE CASELLE, NUMERI + COMBO
@@ -108,10 +139,10 @@ let CalcoloBonus = () => {
         });
         if ( bonusPoints >= 60 ) {
             $('.bonus .' + nomeColonna + '-bonus input').val(bonusPoints * 2);
-            $('.bonus .' + nomeColonna + '-bonus input').attr('class', 'bonus-bg-sopra');
+            $('.bonus .' + nomeColonna + '-bonus input').addClass('bonus-bg-sopra');
+            $('.bonus .' + nomeColonna + '-bonus input').removeClass('bonus-bg-sotto');
         } else {
             $('.bonus .' + nomeColonna + '-bonus input').val(bonusPoints);
-            $('.bonus .' + nomeColonna + '-bonus input').attr('class', 'bonus-bg-sotto');
         }
 
     });

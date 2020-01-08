@@ -1,6 +1,5 @@
 * {
-    padding: 0;
-    margin: 0;
+    padding: 0; margin: 0;
     font-family: 'Roboto', sans-serif;
 }
 html {
@@ -11,13 +10,11 @@ table {
     border-collapse: collapse;
 }
 td {
+    width: 50px; height: 50px;
     border: 1px black solid;
-    width: 50px;
-    height: 50px;
 }
 input {
-    height: 50px;
-    width: 50px;
+    width: 50px; height: 50px;
     border: 0;
     font-size: 25px;
     text-align: center;
@@ -30,6 +27,7 @@ input:disabled {
 }
 .no-border {
     border: 0;
+    font-size: 18px;
 }
 .bonus {
     border: 3px solid black;
@@ -56,71 +54,64 @@ input:disabled {
     background-color: #fe5722;
 }
 .settings-button {
-    width: 35px;
-    height: 35px;
+    width: 35px; height: 35px;
     position: fixed;
-    right: 10px;
-    top: 10px;
+    right: 10px; top: 10px;
 }
 .settings-button img {
-    width: 35px;
-    height: 35px;
+    width: 35px; height: 35px;
 }
 .settings-page {
-/* Height & width depends on how you want to reveal the overlay (see JS below) */   
-    height: 0%;
-    width: 100%;
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    background-color: rgb(0,0,0); /* Black fallback color */
-    background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
-    overflow-y: hidden; /* Disable horizontal scroll */
-    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+    width: 100%; height: 0%;
+    position: fixed;
+    z-index: 1;
+    left: 0; top: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+    overflow-y: hidden;
+    transition: 0.5s;
 }
-/* Position the content inside the overlay */
 .settings-content {
+    width: 100%;
     position: relative;
-    top: 25%; /* 25% from the top */
-    width: 100%; /* 100% width */
-    text-align: center; /* Centered text/links */
-    margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+    top: 25%;
+    text-align: left;
 }
-/* The navigation links inside the overlay */
+.settings-content a {
+    padding: 0 0 10px 10%;
+}
 .settings-page a {
-    padding: 8px;
     text-decoration: none;
-    font-size: 36px;
+    font-size: 30px;
     color: #818181;
-    display: block; /* Display block instead of inline */
-    transition: 0.3s; /* Transition effects on hover (color) */
+    display: block;
+    transition: 0.3s;
 }
-/* When you mouse over the navigation links, change their color */
 .settings-page a:hover, .settings-page a:focus {
     color: #f1f1f1;
 }
-/* Position the close button (top right corner) */
 .settings-page #settings-closebtn {
     position: absolute;
-    top: 20px;
-    right: 45px;
-    font-size: 60px;
+    top: 15px; right: 35px;
+    font-size: 55px;
+    opacity: 0;
+    transition: opacity .25s;
 }
 .open {
     height: 100%;
 }
+.open #settings-closebtn {
+    opacity: 1;
+}
 .risultato-finale {
-    height: 80px;
-    width: 100%;
+    width: 100%; height: 80px;
     text-align: -webkit-center;
     padding-top: 30px;
 }
 .risultato-finale .input-risultato-finale {
+    width: 200px; height: 50px;
     border: 1px black solid;
     padding: 10px;
-    width: 200px;
-    height: 50px;
     background: #cfcfcf;
     font-size: 15px;
     border-radius: 5px;
@@ -139,4 +130,15 @@ input:disabled {
     font-size: 25px !important;
     font-weight: 500;
     color: white;
+}
+.small td, .small td input {
+    width: 40px !important; height: 40px !important;
+    max-width: 40px !important; max-height: 40px !important;
+    font-size: 17px;
+}
+.small-btn input {
+    width: 150px !important; height: 40px !important;
+}
+.totale input {
+    font-size: 20px;
 }
