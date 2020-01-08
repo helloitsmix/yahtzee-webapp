@@ -22,6 +22,7 @@ let intervalloCalcoloAggiunto = null;
 //     event.returnValue = '';
 // });
 
+// DISABLE RELOAD
 // swiperefreshLayout.setRefreshing(false);
 // swiperefreshLayout.setEnabled(false);
 
@@ -106,8 +107,8 @@ let Setup = () => {
     $('.salire input').on('input propertychange', () => { // CASELLE A SALIRE
         UpDownUnlock();
     });
-    $('.numeri input').on('input propertychange', () => { // TUTTE LE CASELLE NUMERI 1-6
-        CalcoloBonus();
+    $('.numeri input').on('input propertychange', e => { // TUTTE LE CASELLE NUMERI 1-6
+        CalcoloBonus(e.target);
     });
 
     $('.scala input, .full input, .poker input, .yaz input').keyup( e => { // TUTTE LE CASELLE COMBO CON "+XX" PUNTI
@@ -122,30 +123,29 @@ let Setup = () => {
         TotaleCheck(e.target);
     });
 
-    $('.numeri input, .combo input').on('focusout propertychange', (e) => { // TUTTE LE CASELLE, NUMERI + COMBO
+    $('.numeri input, .combo input').on('focusout propertychange', () => { // TUTTE LE CASELLE, NUMERI + COMBO
         RisultatoCheck();
     });
 
 };
 
-let CalcoloBonus = () => {
-    
-    nomiColonne.forEach(nomeColonna => { 
+let CalcoloBonus = item => {
 
-        let bonusPoints = 0;
-        $('.numeri .' + nomeColonna + ' input').each( (index, item) => {
-            if ( !isNaN( parseInt( $(item).val() )))
-                bonusPoints += parseInt( $(item).val() );
-        });
-        if ( bonusPoints >= 60 ) {
-            $('.bonus .' + nomeColonna + '-bonus input').val(bonusPoints * 2);
-            $('.bonus .' + nomeColonna + '-bonus input').addClass('bonus-bg-sopra');
-            $('.bonus .' + nomeColonna + '-bonus input').removeClass('bonus-bg-sotto');
-        } else {
-            $('.bonus .' + nomeColonna + '-bonus input').val(bonusPoints);
-        }
-
+    console.log($(item).parent().attr('class'));
+    let bonusPoints = 0;
+    $('.numeri .' + $(item).parent().attr('class') + ' input').each( (index, item) => {
+        if ( !isNaN( parseInt( $(item).val() )))
+            bonusPoints += parseInt( $(item).val() );
     });
+    if ( bonusPoints >= 60 ) {
+        $('.bonus .' + $(item).parent().attr('class') + '-bonus input').val(bonusPoints * 2);
+        $('.bonus .' + $(item).parent().attr('class') + '-bonus input').addClass('bonus-bg-sopra');
+        $('.bonus .' + $(item).parent().attr('class') + '-bonus input').removeClass('bonus-bg-sotto');
+    } else {
+        $('.bonus .' + $(item).parent().attr('class') + '-bonus input').val(bonusPoints);
+        $('.bonus .' + $(item).parent().attr('class') + '-bonus input').addClass('bonus-bg-sotto');
+        $('.bonus .' + $(item).parent().attr('class') + '-bonus input').removeClass('bonus-bg-sopra');
+    }
 
 };
 
@@ -182,7 +182,7 @@ let CalcoloAggiunto = item => {
 };
 
 let TotaleCheck = item => {
-
+    
     $('.' + $(item).parent().attr('class') + ' input').each( (index, item) => {
 
         if ( isNaN( parseInt( $(item).val() )) ) {
@@ -197,7 +197,9 @@ let TotaleCheck = item => {
             }
             else
             {
-                CalcoloTotale($(item).parent().attr('class'), '');
+                setTimeout(function() {
+                    CalcoloTotale($(item).parent().attr('class'), '');
+                }, 1200);
             }
 
         }
