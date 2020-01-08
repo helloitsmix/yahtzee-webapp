@@ -57,6 +57,10 @@ input:disabled {
     width: 35px; height: 35px;
     position: fixed;
     right: 10px; top: 10px;
+    transition: transform 1s ease;
+}
+.btn-rotate {
+    transform: rotate(180deg);
 }
 .settings-button img {
     width: 35px; height: 35px;
@@ -110,7 +114,9 @@ input:disabled {
 }
 .risultato-finale .input-risultato-finale {
     width: 200px; height: 50px;
-    border: 1px black solid;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #929292;
     padding: 10px;
     background: #cfcfcf;
     font-size: 15px;
@@ -127,7 +133,8 @@ input:disabled {
 }
 .risultato-finale .active {
     background: #c62828 !important;
-    font-size: 25px !important;
+    border-color: #000000 !important;
+    font-size: 20px !important;
     font-weight: 500;
     color: white;
 }

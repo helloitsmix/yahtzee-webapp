@@ -15,6 +15,7 @@ let colori = [
 ];
 
 let intervalloCalcoloAggiunto = null;
+let settingsBtnRotation = 0;
 
 // CONFERMA IL RELOAD PAGINA
 // window.addEventListener('beforeunload', (event) => {
@@ -22,26 +23,34 @@ let intervalloCalcoloAggiunto = null;
 //     event.returnValue = '';
 // });
 
-// DISABLE RELOAD
-// swiperefreshLayout.setRefreshing(false);
-// swiperefreshLayout.setEnabled(false);
-
 $('#settings-link').click(function(e) { 
+    e.preventDefault();
+
+    settingsBtnRotation += 180;
+    $('.settings-button').css('transform','rotate(' + settingsBtnRotation + 'deg)');
     $('.settings-page').addClass('open');
     return false;
 });
 
 $('#settings-closebtn').click(function(e) { 
+    e.preventDefault();
+
     $('.settings-page').removeClass('open');
+    settingsBtnRotation += 180;
+    $('.settings-button').css('transform','rotate(' + settingsBtnRotation + 'deg)');
     return false;
 });
 
 $('#riprendi').click(function(e) {
+    e.preventDefault();
     $('.settings-page').removeClass('open');
+    settingsBtnRotation += 180;
+    $('.settings-button').css('transform','rotate(' + settingsBtnRotation + 'deg)');
     return false;
 });
 
 $('#nuova-partita').click(function(e) {
+    e.preventDefault();
     if (confirm("Sei sicuro di voler cominciare una nuova partita?") == true) {
         NuovaPartita();
     }
@@ -50,6 +59,7 @@ $('#nuova-partita').click(function(e) {
 
 
 $('#grandezza-griglia').click(function(e) {
+    e.preventDefault();
     if ( $('#grandezza-griglia').text() == 'Griglia Large' )
     {
         $('#grandezza-griglia').text('Griglia Small');
@@ -75,7 +85,7 @@ let NuovaPartita = () => {
 
     $('.numeri input, .combo input').val(''); // TUTTE LE CASELLE TORNANO VUOTE
     $('.bonus input').val(0);
-    $('.bonus input').attr('class', 'bonus-bg-sopra');
+    $('.bonus input').attr('class', 'bonus-bg-sotto');
     
     $('.scendere input').prop('disabled', true);
     $('.scendere input').eq(0).prop('disabled', false);
@@ -95,6 +105,8 @@ let NuovaPartita = () => {
     $('.input-risultato-finale').prop('disabled', true);
 
     $('.settings-page').removeClass('open');
+    settingsBtnRotation += 180;
+    $('.settings-button').css('transform','rotate(' + settingsBtnRotation + 'deg)');
 };
 
 let Setup = () => {
@@ -102,10 +114,10 @@ let Setup = () => {
     $('.bonus input').val(0);
 
     $('.scendere input').on('input propertychange', () => { // CASELLE A SCENDERE
-        UpDownUnlock();
+        DownUnlock();
     });
     $('.salire input').on('input propertychange', () => { // CASELLE A SALIRE
-        UpDownUnlock();
+        UpUnlock();
     });
     $('.numeri input').on('input propertychange', e => { // TUTTE LE CASELLE NUMERI 1-6
         CalcoloBonus(e.target);
@@ -127,11 +139,12 @@ let Setup = () => {
         RisultatoCheck();
     });
 
+    // CHECK LOCAL STORAGE PER GRANDEZZA GRIGLIA
+
 };
 
 let CalcoloBonus = item => {
 
-    console.log($(item).parent().attr('class'));
     let bonusPoints = 0;
     $('.numeri .' + $(item).parent().attr('class') + ' input').each( (index, item) => {
         if ( !isNaN( parseInt( $(item).val() )))
@@ -149,24 +162,44 @@ let CalcoloBonus = item => {
 
 };
 
-let UpDownUnlock = () => {
+let DownUnlock = () => {
 
     $('.scendere input').each( (index, item) => {
-
-        if ( $(item).prop('disabled') && parseInt( $('.scendere input').eq(index-1).val() ) >= 0 && !isNaN(parseInt( $('.scendere input').eq(index-1).val() )) )
+        
+        if ( $(item).prop('disabled') )
         {
-            $('.scendere input').eq(index).prop('disabled', false);
-            return false;
+
+            if ( parseInt( $('.scendere input').eq(index-1).val() ) >= 0 && !isNaN(parseInt( $('.scendere input').eq(index-1).val() )) )
+            {
+                $('.scendere input').eq(index).prop('disabled', false);
+                return false;
+            } else if ( isNaN(parseInt( $('.scendere input').eq(index-1).val() )) && isNaN(parseInt( $('.scendere input').eq(index-2).val() )) ) {
+                $('.scendere input').eq(index-1).prop('disabled', true);
+                return false;
+            }
+
         }
 
     });
 
+};
+
+let UpUnlock = () => {
+
     $('.salire input').each( (index, item) => {
         
-        if ( !$(item).prop('disabled') && parseInt( $('.salire input').eq(index).val() ) >= 0 && !isNaN(parseInt( $('.salire input').eq(index).val() )) )
+        if ( !$(item).prop('disabled') )
         {
-            $('.salire input').eq(index-1).prop('disabled', false);
-            return false;
+
+            if ( parseInt( $('.salire input').eq(index).val() ) >= 0 && !isNaN(parseInt( $('.salire input').eq(index).val() )) )
+            {
+                $('.salire input').eq(index-1).prop('disabled', false);
+                return false;
+            } else if ( isNaN(parseInt( $('.salire input').eq(index).val())) && isNaN(parseInt( $('.salire input').eq(index+1).val())) ) {
+                $('.salire input').eq(index).prop('disabled', true);
+                return false;
+            }
+            
         }
 
     });
