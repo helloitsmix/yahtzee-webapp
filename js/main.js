@@ -133,9 +133,6 @@ let Setup = () => {
     
     $('.numeri input, .combo input').on('focusout propertychange', (e) => { // TUTTE LE CASELLE, NUMERI + COMBO
         TotaleCheck(e.target);
-    });
-
-    $('.numeri input, .combo input').on('focusout propertychange', () => { // TUTTE LE CASELLE, NUMERI + COMBO
         RisultatoCheck();
     });
 
@@ -215,7 +212,7 @@ let CalcoloAggiunto = item => {
 };
 
 let TotaleCheck = item => {
-    
+
     $('.' + $(item).parent().attr('class') + ' input').each( (index, item) => {
 
         if ( isNaN( parseInt( $(item).val() )) ) {
