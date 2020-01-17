@@ -82,7 +82,7 @@ input:disabled {
     text-align: left;
 }
 .settings-content a {
-    padding: 0 0 10px 10%;
+    padding: 0 0 20px 10%;
 }
 .settings-page a {
     text-decoration: none;
@@ -93,6 +93,9 @@ input:disabled {
 }
 .settings-page a:hover, .settings-page a:focus {
     color: #f1f1f1;
+}
+.settings-page a:first-child {
+    padding-bottom: 60px;
 }
 .settings-page #settings-closebtn {
     position: absolute;

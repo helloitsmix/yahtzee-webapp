@@ -15,7 +15,9 @@ let colori = [
 ];
 
 let intervalloCalcoloAggiunto = null;
+let intervalloSalvataggioDati = null;
 let settingsBtnRotation = 0;
+let arrayDaSalvare = new Array(60);
 
 // CONFERMA IL RELOAD PAGINA
 // window.addEventListener('beforeunload', (event) => {
@@ -57,22 +59,31 @@ $('#nuova-partita').click(function(e) {
     return false;
 });
 
-
 $('#grandezza-griglia').click(function(e) {
     e.preventDefault();
     if ( $('#grandezza-griglia').text() == 'Griglia Large' )
     {
-        $('#grandezza-griglia').text('Griglia Small');
-        $('table').addClass('small');
-        $('.risultato-finale').addClass('small-btn');
+        SetGrigliaSmall();
+        localStorage.setItem( 'table-settings', 'small' );
     }
     else
     {
-        $('#grandezza-griglia').text('Griglia Large');
-        $('table').removeClass('small');
-        $('.risultato-finale').removeClass('small-btn');
+        SetGrigliaLarge();
+        localStorage.setItem( 'table-settings', 'large' );
     }
 });
+
+let SetGrigliaSmall = () => {
+    $('#grandezza-griglia').text('Griglia Small');
+    $('table').addClass('small');
+    $('.risultato-finale').addClass('small-btn');
+};
+
+let SetGrigliaLarge = () => {
+    $('#grandezza-griglia').text('Griglia Large');
+    $('table').removeClass('small');
+    $('.risultato-finale').removeClass('small-btn');
+};
 
 let NuovaPartita = () => {
     colori = [
@@ -82,6 +93,8 @@ let NuovaPartita = () => {
         'pink',
         'red',
     ];
+
+    arrayDaSalvare = new Array(60);
 
     $('.numeri input, .combo input').val(''); // TUTTE LE CASELLE TORNANO VUOTE
     $('.bonus input').val(0);
@@ -107,6 +120,8 @@ let NuovaPartita = () => {
     $('.settings-page').removeClass('open');
     settingsBtnRotation += 180;
     $('.settings-button').css('transform','rotate(' + settingsBtnRotation + 'deg)');
+
+    localStorage.removeItem('data');
 };
 
 let Setup = () => {
@@ -124,20 +139,104 @@ let Setup = () => {
     });
 
     $('.scala input, .full input, .poker input, .yaz input').keyup( e => { // TUTTE LE CASELLE COMBO CON "+XX" PUNTI
-        clearInterval(intervalloCalcoloAggiunto)
+        clearInterval(intervalloCalcoloAggiunto);
         intervalloCalcoloAggiunto = setInterval(function() {
             CalcoloAggiunto(e.target);
-            clearInterval(intervalloCalcoloAggiunto)
+            clearInterval(intervalloCalcoloAggiunto);
         }, 1000);
     });
     
     $('.numeri input, .combo input').on('focusout propertychange', (e) => { // TUTTE LE CASELLE, NUMERI + COMBO
         TotaleCheck(e.target);
         RisultatoCheck();
+        NumeroZeroCheck();
+
+        clearInterval(intervalloSalvataggioDati);
+        intervalloSalvataggioDati = setInterval(function() {
+            SalvataggioDati();
+            console.log('Saved');
+            clearInterval(intervalloSalvataggioDati);
+        }, 1100);
+
     });
 
-    // CHECK LOCAL STORAGE PER GRANDEZZA GRIGLIA
+};
 
+let CheckIniziale = () => {
+
+    if (localStorage.getItem('table-settings') == 'small') {
+        SetGrigliaSmall();
+    } else {
+        SetGrigliaLarge();
+    }
+
+    if (localStorage.getItem('data') !== null)
+    { 
+        let arrayDaLocalStorage = JSON.parse(localStorage.getItem('data'));
+
+        $('.numeri input, .combo input').each( (index) => {
+            $('.numeri input, .combo input').eq(index).val(arrayDaLocalStorage[index]);
+            arrayDaSalvare[index] = arrayDaLocalStorage[index];
+        });
+    }
+
+    DisabledUpDownCheck();
+    
+    $(nomiColonne).each( (index, colonna) => {
+        let bonusPoints = 0;
+        
+        $('.numeri .' + colonna + ' input').each( (index, item) => {
+            if ( !isNaN( parseInt( $(item).val() )))
+                bonusPoints += parseInt( $(item).val() );
+        });
+
+        if ( bonusPoints >= 60 ) {
+            $('.bonus .' + colonna + '-bonus input').val(bonusPoints * 2);
+            $('.bonus .' + colonna + '-bonus input').addClass('bonus-bg-sopra');
+            $('.bonus .' + colonna + '-bonus input').removeClass('bonus-bg-sotto');
+        } else {
+            $('.bonus .' + colonna + '-bonus input').val(bonusPoints);
+            $('.bonus .' + colonna + '-bonus input').addClass('bonus-bg-sotto');
+            $('.bonus .' + colonna + '-bonus input').removeClass('bonus-bg-sopra');
+        }
+    });
+
+    TriggerFocusOutColonne();
+
+};
+
+let DisabledUpDownCheck = () => {
+
+    $('.scendere input').each( item => { DownUnlock(); });
+    $('.salire input').each( item => { UpUnlock(); });
+    $('.scendere input').eq(0).prop('disabled', false)
+    $('.salire input').eq(11).prop('disabled', false)
+};
+
+let TriggerFocusOutColonne = () => {
+    $(nomiColonne).each( (index, colonna) => {
+        $('.' + colonna + ' input').eq(0).trigger( "focusout" )
+    });
+};
+
+let SalvataggioDati = () => {
+    $('.numeri input, .combo input').each( (index, item) => {
+        arrayDaSalvare[index] = $(item).val();
+    });
+    localStorage.setItem( 'data', JSON.stringify(arrayDaSalvare) );
+};
+
+let NumeroZeroCheck = () => {
+    $('.numeri input, .combo input').each( (index, item) => {
+        if (parseInt($(item).val()) === 0)
+        {
+            $(item).css('color', '#bd0000');
+        }
+        else
+        {
+            $(item).css('color', '#000000');
+        }
+    });
 };
 
 let CalcoloBonus = item => {
@@ -288,8 +387,7 @@ let RisultatoCheck = () => {
                 return false;
             } else if( index == 4) {
                 $('.input-risultato-finale').prop('disabled', false);
-                $('.input-risultato-finale').addClass('active',1000)
-                
+                $('.input-risultato-finale').addClass('active',1000)                
             }
         });
     }, 3000);
@@ -320,3 +418,4 @@ $('.input-risultato-finale').click( () => {
 });
 
 Setup();
+CheckIniziale();
