@@ -170,6 +170,8 @@ let CheckIniziale = () => {
         SetGrigliaLarge();
     }
 
+    // if (non c'è un High-score nel local storage) { inserisci 0 } else { inserisci quello nel local storage };
+
     if (localStorage.getItem('data') !== null)
     { 
         let arrayDaLocalStorage = JSON.parse(localStorage.getItem('data'));
@@ -207,10 +209,10 @@ let CheckIniziale = () => {
 
 let DisabledUpDownCheck = () => {
 
-    $('.scendere input').each( item => { DownUnlock(); });
-    $('.salire input').each( item => { UpUnlock(); });
-    $('.scendere input').eq(0).prop('disabled', false)
-    $('.salire input').eq(11).prop('disabled', false)
+    $('.scendere input').each( () => { DownUnlock(); });
+    $('.salire input').each( () => { UpUnlock(); });
+    $('.scendere input').eq(0).prop('disabled', false);
+    $('.salire input').eq(11).prop('disabled', false);
 };
 
 let TriggerFocusOutColonne = () => {

@@ -97,12 +97,22 @@ input:disabled {
 .settings-page a:first-child {
     padding-bottom: 60px;
 }
+.settings-page a:last-child {
+    padding-top: 60px;
+}
 .settings-page #settings-closebtn {
     position: absolute;
     top: 15px; right: 35px;
     font-size: 55px;
     opacity: 0;
     transition: opacity .25s;
+}
+.settings-page #high-score span {
+    border-bottom: 1px solid;
+    border-bottom-style: dashed;
+}
+.settings-page #high-score:focus, .settings-page #high-score:hover {
+    color: #818181;
 }
 .open {
     height: 100%;
