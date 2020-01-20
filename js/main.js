@@ -64,12 +64,12 @@ $('#grandezza-griglia').click(function(e) {
     if ( $('#grandezza-griglia').text() == 'Griglia Large' )
     {
         SetGrigliaSmall();
-        localStorage.setItem( 'table-settings', 'small' );
+        localStorage.setItem( 'table-size', 'small' );
     }
     else
     {
         SetGrigliaLarge();
-        localStorage.setItem( 'table-settings', 'large' );
+        localStorage.setItem( 'table-size', 'large' );
     }
 });
 
@@ -164,13 +164,21 @@ let Setup = () => {
 
 let CheckIniziale = () => {
 
-    if (localStorage.getItem('table-settings') == 'small') {
+    if (localStorage.getItem('table-size') == 'small') {
         SetGrigliaSmall();
     } else {
         SetGrigliaLarge();
     }
 
-    // if (non c'è un High-score nel local storage) { inserisci 0 } else { inserisci quello nel local storage };
+    if (localStorage.getItem('high-score') === null)
+    {
+        $('#high-score span').text('0');
+        localStorage.setItem('high-score', 0);
+    }
+    else
+    {
+        $('#high-score span').text(localStorage.getItem('high-score'))
+    }
 
     if (localStorage.getItem('data') !== null)
     { 
@@ -401,8 +409,8 @@ $('.input-risultato-finale').click( () => {
     let totalPoints = 0;
     
     $('.totale input').each( (index, item) => {
-        if ( !isNaN( parseInt( $(item).val() )))
-                totalPoints += parseInt( $(item).val() );
+        if (!isNaN( parseInt( $(item).val() )))
+            totalPoints += parseInt( $(item).val() );
     });
 
     $({percentage: 0}).stop(true).animate({percentage: totalPoints}, {
@@ -415,8 +423,12 @@ $('.input-risultato-finale').click( () => {
     }).promise().done(function () {
         // hard set the value after animation is done to be sure the value is correct
         $('.input-risultato-finale').val(totalPoints);
+        if(totalPoints > localStorage.getItem('high-score'))
+        {
+            localStorage.setItem('high-score', totalPoints);
+        }
     });
-
+    
 });
 
 Setup();
