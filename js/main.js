@@ -61,6 +61,9 @@ $('#nuova-partita').click(function(e) {
 
 $('#grandezza-griglia').click(function(e) {
     e.preventDefault();
+    
+    // $('#slider-griglia').prop('checked') == true
+
     if ( $('#grandezza-griglia').text() == 'Griglia Large' )
     {
         SetGrigliaSmall();
