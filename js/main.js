@@ -5,7 +5,6 @@ let nomiColonne = [
     'secchi',
     'annunciati'
 ];
-
 let colori = [
     'yellow',
     'green',
@@ -19,11 +18,7 @@ let intervalloSalvataggioDati = null;
 let settingsBtnRotation = 0;
 let arrayDaSalvare = new Array(60);
 
-// CONFERMA IL RELOAD PAGINA
-// window.addEventListener('beforeunload', (event) => {
-//     event.preventDefault();
-//     event.returnValue = '';
-// });
+// TOGLIERE IL RELOAD PAGINA CON SWIPE UP?
 
 $('#settings-link').click(function(e) { 
     e.preventDefault();
@@ -59,10 +54,11 @@ $('#nuova-partita').click(function(e) {
     return false;
 });
 
-$('#grandezza-griglia').click(function(e) {
+$('#grandezza-griglia').click(function(e) { 
     e.preventDefault();
     
-    // $('#slider-griglia').prop('checked') == true
+    // $('#slider-griglia').prop('checked') == true     check true / false
+    // $('#slider-griglia').prop('checked', true)       set true
 
     if ( $('#grandezza-griglia').text() == 'Griglia Large' )
     {
@@ -426,9 +422,10 @@ $('.input-risultato-finale').click( () => {
     }).promise().done(function () {
         // hard set the value after animation is done to be sure the value is correct
         $('.input-risultato-finale').val(totalPoints);
-        if(totalPoints > localStorage.getItem('high-score'))
+        if(totalPoints > parseInt(localStorage.getItem('high-score')))
         {
             localStorage.setItem('high-score', totalPoints);
+            $('#high-score span').text(totalPoints);
         }
     });
     
