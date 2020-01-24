@@ -15,34 +15,20 @@ let colori = [
 
 let intervalloCalcoloAggiunto = null;
 let intervalloSalvataggioDati = null;
-let settingsBtnRotation = 0;
 let arrayDaSalvare = new Array(60);
 
 // TOGLIERE IL RELOAD PAGINA CON SWIPE UP?
 
-$('#settings-link').click(function(e) { 
-    e.preventDefault();
-
-    settingsBtnRotation += 180;
-    $('.settings-button').css('transform','rotate(' + settingsBtnRotation + 'deg)');
-    $('.settings-page').addClass('open');
-    return false;
-});
-
-$('#settings-closebtn').click(function(e) { 
-    e.preventDefault();
-
-    $('.settings-page').removeClass('open');
-    settingsBtnRotation += 180;
-    $('.settings-button').css('transform','rotate(' + settingsBtnRotation + 'deg)');
+$("#hamburger-settings").click( function() {
+    $('.icon').toggleClass('close');
+    $('.settings-page').toggleClass('open');
+    $('.tabellone').toggleClass('blurred');
     return false;
 });
 
 $('#riprendi').click(function(e) {
     e.preventDefault();
-    $('.settings-page').removeClass('open');
-    settingsBtnRotation += 180;
-    $('.settings-button').css('transform','rotate(' + settingsBtnRotation + 'deg)');
+    chiudiSettings();
     return false;
 });
 
@@ -54,13 +40,9 @@ $('#nuova-partita').click(function(e) {
     return false;
 });
 
-$('#grandezza-griglia').click(function(e) { 
-    e.preventDefault();
-    
-    // $('#slider-griglia').prop('checked') == true     check true / false
-    // $('#slider-griglia').prop('checked', true)       set true
+$('.slider').click(function(e) { 
 
-    if ( $('#grandezza-griglia').text() == 'Griglia Large' )
+    if($('#slider-griglia').prop('checked') === false)
     {
         SetGrigliaSmall();
         localStorage.setItem( 'table-size', 'small' );
@@ -70,16 +52,21 @@ $('#grandezza-griglia').click(function(e) {
         SetGrigliaLarge();
         localStorage.setItem( 'table-size', 'large' );
     }
+
 });
 
+let chiudiSettings = () => {
+    $('.icon').removeClass('close');
+    $('.settings-page').removeClass('open');
+    $('.tabellone').removeClass('blurred');
+};
+
 let SetGrigliaSmall = () => {
-    $('#grandezza-griglia').text('Griglia Small');
     $('table').addClass('small');
     $('.risultato-finale').addClass('small-btn');
 };
 
 let SetGrigliaLarge = () => {
-    $('#grandezza-griglia').text('Griglia Large');
     $('table').removeClass('small');
     $('.risultato-finale').removeClass('small-btn');
 };
@@ -116,10 +103,7 @@ let NuovaPartita = () => {
     $('.input-risultato-finale').removeClass('active');
     $('.input-risultato-finale').prop('disabled', true);
 
-    $('.settings-page').removeClass('open');
-    settingsBtnRotation += 180;
-    $('.settings-button').css('transform','rotate(' + settingsBtnRotation + 'deg)');
-
+    chiudiSettings();
     localStorage.removeItem('data');
 };
 
@@ -165,8 +149,10 @@ let CheckIniziale = () => {
 
     if (localStorage.getItem('table-size') == 'small') {
         SetGrigliaSmall();
+        $('#slider-griglia').prop('checked', true);
     } else {
         SetGrigliaLarge();
+        $('#slider-griglia').prop('checked', false);
     }
 
     if (localStorage.getItem('high-score') === null)
@@ -215,7 +201,6 @@ let CheckIniziale = () => {
 };
 
 let DisabledUpDownCheck = () => {
-
     $('.scendere input').each( () => { DownUnlock(); });
     $('.salire input').each( () => { UpUnlock(); });
     $('.scendere input').eq(0).prop('disabled', false);

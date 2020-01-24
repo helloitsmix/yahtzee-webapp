@@ -6,193 +6,202 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Yahtzee</title>
 	<link rel="manifest" href="manifest.json" crossorigin="use-credentials">
-	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Mansalva|Roboto&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 	<div class="settings-page">
-
-		<a id="settings-closebtn">&times;</a>
-
 		<div class="settings-content">
-			<a id="riprendi">Riprendi</a>
-			<a id="nuova-partita">Nuova Partita</a>
-			<a id="grandezza-griglia">Griglia Large</a>
-			<label class="switch">
-				<input id="slider-griglia" type="checkbox">
-				<span class="slider round"></span>
-			</label>
-			<a id="high-score">High-Score: <span></span></a>
+
+			<div id="nuova-partita">Nuova partita</div>
+
+			<div class="grandezza-griglia">Griglia piccola
+				<label class="switch">
+					<input type="checkbox" id="slider-griglia">
+					<span class="slider round"></span>
+				</label>
+			</div>
+			
+			<div id="high-score">Punteggio migliore: <span></span></div>
+
+			<div id="riprendi">Riprendi</div>
+
 		</div>
-
-
 	</div>
 
-	<a id="settings-link">
-		<div class="settings-button"> <img src="img/settings-gear.png" alt="settings"> </div>
-	</a>
-	
-    <table>
-
-		<tr class="layout">
-			<td class="center no-border"></td>
-			<td class="center no-border">↓</td>
-			<td class="center no-border">↑</td>
-			<td class="center no-border">L</td>
-			<td class="center no-border">S</td>
-			<td class="center no-border">A</td>
-			<td class="center no-border"></td>
-		</tr>
-
-        <tr class="numeri">
-			<td class="center no-border">1</td>
-			<td class="scendere"> <input onClick="this.select();" type="tel" name="scendere-input" maxlength="1"> </td>
-			<td class="salire"> <input onClick="this.select();" type="tel" name="salire-input" maxlength="1" disabled> </td>
-			<td class="liberi"> <input onClick="this.select();" type="tel" name="liberi-input" maxlength="1"> </td>
-			<td class="secchi"> <input onClick="this.select();" type="tel" name="secchi-input" maxlength="1"> </td>
-			<td class="annunciati"> <input onClick="this.select();" type="tel" name="annunciati-input" maxlength="1"> </td>
-			<td class="center no-border"></td>
-		</tr>
-        <tr class="numeri">
-			<td class="center no-border">2</td>
-			<td class="scendere"> <input onClick="this.select();" type="tel" name="scendere-input" maxlength="2" disabled> </td>
-			<td class="salire"> <input onClick="this.select();" type="tel" name="salire-input" maxlength="2" disabled> </td>
-			<td class="liberi"> <input onClick="this.select();" type="tel" name="liberi-input" maxlength="2"> </td>
-			<td class="secchi"> <input onClick="this.select();" type="tel" name="secchi-input" maxlength="2"> </td>
-			<td class="annunciati"> <input onClick="this.select();" type="tel" name="annunciati-input" maxlength="2"> </td>
-			<td class="center no-border"></td>
-		</tr>
-        <tr class="numeri">
-			<td class="center no-border">3</td>
-			<td class="scendere"> <input onClick="this.select();" type="tel" name="scendere-input" maxlength="2" disabled> </td>
-			<td class="salire"> <input onClick="this.select();" type="tel" name="salire-input" maxlength="2" disabled> </td>
-			<td class="liberi"> <input onClick="this.select();" type="tel" name="liberi-input" maxlength="2"> </td>
-			<td class="secchi"> <input onClick="this.select();" type="tel" name="secchi-input" maxlength="2"> </td>
-			<td class="annunciati"> <input onClick="this.select();" type="tel" name="annunciati-input" maxlength="2"> </td>
-			<td class="center no-border"></td>
-		</tr>
-        <tr class="numeri">
-			<td class="center no-border">4</td>
-			<td class="scendere"> <input onClick="this.select();" type="tel" name="scendere-input" maxlength="2" disabled> </td>
-			<td class="salire"> <input onClick="this.select();" type="tel" name="salire-input" maxlength="2" disabled> </td>
-			<td class="liberi"> <input onClick="this.select();" type="tel" name="liberi-input" maxlength="2"> </td>
-			<td class="secchi"> <input onClick="this.select();" type="tel" name="secchi-input" maxlength="2"> </td>
-			<td class="annunciati"> <input onClick="this.select();" type="tel" name="annunciati-input" maxlength="2"> </td>
-			<td class="center no-border"></td>
-		</tr>
-        <tr class="numeri">
-			<td class="center no-border">5</td>
-			<td class="scendere"> <input onClick="this.select();" type="tel" name="scendere-input" maxlength="2" disabled> </td>
-			<td class="salire"> <input onClick="this.select();" type="tel" name="salire-input" maxlength="2" disabled> </td>
-			<td class="liberi"> <input onClick="this.select();" type="tel" name="liberi-input" maxlength="2"> </td>
-			<td class="secchi"> <input onClick="this.select();" type="tel" name="secchi-input" maxlength="2"> </td>
-			<td class="annunciati"> <input onClick="this.select();" type="tel" name="annunciati-input" maxlength="2"> </td>
-			<td class="center no-border"></td>
-		</tr>
-        <tr class="numeri">
-			<td class="center no-border">6</td>
-			<td class="scendere"> <input onClick="this.select();" type="tel" name="scendere-input" maxlength="2" disabled> </td>
-			<td class="salire"> <input onClick="this.select();" type="tel" name="salire-input" maxlength="2" disabled> </td>
-			<td class="liberi"> <input onClick="this.select();" type="tel" name="liberi-input" maxlength="2"> </td>
-			<td class="secchi"> <input onClick="this.select();" type="tel" name="secchi-input" maxlength="2"> </td>
-			<td class="annunciati"> <input onClick="this.select();" type="tel" name="annunciati-input" maxlength="2"> </td>
-			<td class="center no-border"></td>
-		</tr>
-		
-		<tr class="bonus">
-			<td class="center no-border">B</td>
-			<td class="scendere-bonus"> <input type="tel" name="scendere-bonus" class="bonus-bg-sotto" maxlength="3" readonly> </td>
-			<td class="salire-bonus"> <input type="tel" name="salire-bonus" class="bonus-bg-sotto" maxlength="3" readonly> </td>
-			<td class="liberi-bonus"> <input type="tel" name="liberi-bonus" class="bonus-bg-sotto" maxlength="3" readonly> </td>
-			<td class="secchi-bonus"> <input type="tel" name="secchi-bonus" class="bonus-bg-sotto" maxlength="3" readonly> </td>
-			<td class="annunciati-bonus"> <input type="tel" name="annunciati-bonus" class="bonus-bg-sotto" maxlength="3" readonly> </td>
-			<td class="center no-border">x2</td>
-		</tr>
-		
-		<tr class="combo scala">
-			<td class="center no-border">S</td>
-			<td class="scendere"> <input onClick="this.select();" type="tel" name="scendere-input" maxlength="2" disabled> </td>
-			<td class="salire"> <input onClick="this.select();" type="tel" name="salire-input" maxlength="2" disabled> </td>
-			<td class="liberi"> <input onClick="this.select();" type="tel" name="liberi-input" maxlength="2"> </td>
-			<td class="secchi"> <input onClick="this.select();" type="tel" name="secchi-input" maxlength="2"> </td>
-			<td class="annunciati"> <input onClick="this.select();" type="tel" name="annunciati-input" maxlength="2"> </td>
-			<td class="center no-border">+30</td>
-		</tr>
-		<tr class="combo full">
-			<td class="center no-border">F</td>
-			<td class="scendere"> <input onClick="this.select();" type="tel" name="scendere-input" maxlength="2" disabled> </td>
-			<td class="salire"> <input onClick="this.select();" type="tel" name="salire-input" maxlength="2" disabled> </td>
-			<td class="liberi"> <input onClick="this.select();" type="tel" name="liberi-input" maxlength="2"> </td>
-			<td class="secchi"> <input onClick="this.select();" type="tel" name="secchi-input" maxlength="2"> </td>
-			<td class="annunciati"> <input onClick="this.select();" type="tel" name="annunciati-input" maxlength="2"> </td>
-			<td class="center no-border">+30</td>
-		</tr>
-		<tr class="combo poker">
-			<td class="center no-border">P</td>
-			<td class="scendere"> <input onClick="this.select();" type="tel" name="scendere-input" maxlength="2" disabled> </td>
-			<td class="salire"> <input onClick="this.select();" type="tel" name="salire-input" maxlength="2" disabled> </td>
-			<td class="liberi"> <input onClick="this.select();" type="tel" name="liberi-input" maxlength="2"> </td>
-			<td class="secchi"> <input onClick="this.select();" type="tel" name="secchi-input" maxlength="2"> </td>
-			<td class="annunciati"> <input onClick="this.select();" type="tel" name="annunciati-input" maxlength="2"> </td>
-			<td class="center no-border">+20</td>
-		</tr>
-		<tr class="combo">
-			<td class="center no-border">m</td>
-			<td class="scendere"> <input onClick="this.select();" type="tel" name="scendere-input" maxlength="2" disabled> </td>
-			<td class="salire"> <input onClick="this.select();" type="tel" name="salire-input" maxlength="2" disabled> </td>
-			<td class="liberi"> <input onClick="this.select();" type="tel" name="liberi-input" maxlength="2"> </td>
-			<td class="secchi"> <input onClick="this.select();" type="tel" name="secchi-input" maxlength="2"> </td>
-			<td class="annunciati"> <input onClick="this.select();" type="tel" name="annunciati-input" maxlength="2"> </td>
-			<td class="center no-border"></td>
-		</tr>
-		<tr class="combo">
-			<td class="center no-border">M</td>
-			<td class="scendere"> <input onClick="this.select();" type="tel" name="scendere-input" maxlength="2" disabled> </td>
-			<td class="salire"> <input onClick="this.select();" type="tel" name="salire-input" maxlength="2" disabled> </td>
-			<td class="liberi"> <input onClick="this.select();" type="tel" name="liberi-input" maxlength="2"> </td>
-			<td class="secchi"> <input onClick="this.select();" type="tel" name="secchi-input" maxlength="2"> </td>
-			<td class="annunciati"> <input onClick="this.select();" type="tel" name="annunciati-input" maxlength="2"> </td>
-			<td class="center no-border"></td>
-		</tr>
-		<tr class="combo yaz">
-			<td class="center no-border">Y</td>
-			<td class="scendere"> <input onClick="this.select();" type="tel" name="scendere-input" maxlength="2" disabled> </td>
-			<td class="salire"> <input onClick="this.select();" type="tel" name="salire-input" maxlength="2"> </td>
-			<td class="liberi"> <input onClick="this.select();" type="tel" name="liberi-input" maxlength="2"> </td>
-			<td class="secchi"> <input onClick="this.select();" type="tel" name="secchi-input" maxlength="2"> </td>
-			<td class="annunciati"> <input onClick="this.select();" type="tel" name="annunciati-input" maxlength="2"> </td>
-			<td class="center no-border">+50</td>
-		</tr>
-		
-		<tr>
-			<td class="no-border"></td>
-			<td class="no-border"></td>
-			<td class="no-border"></td>
-			<td class="no-border"></td>
-			<td class="center no-border">x2</td>
-			<td class="center no-border">x3</td>
-			<td class="no-border"></td>
-		</tr>
-		
-		<tr class="totale">
-			<td class="center no-border"></td>
-			<td class="scendere-totale"> <input type="tel" name="scendere-input" maxlength="3" readonly> </td>
-			<td class="salire-totale"> <input type="tel" name="salire-input" maxlength="3" readonly> </td>
-			<td class="liberi-totale"> <input type="tel" name="liberi-input" maxlength="3" readonly> </td>
-			<td class="secchi-totale"> <input type="tel" name="secchi-input" maxlength="4" readonly> </td>
-			<td class="annunciati-totale"> <input type="tel" name="annunciati-input" maxlength="4" readonly> </td>
-			<td class="center no-border"></td>
-		</tr>
-
-
-	</table>
-	
-	<div class="risultato-finale">
-		<input type="text" name="risultato-finale" class="input-risultato-finale" value="RISULTATO" disabled readonly>
+	<div id="hamburger-settings">
+		<div class="circle icon">
+			<span class="line top"></span>
+			<span class="line middle"></span>
+			<span class="line bottom"></span>
+		</div>
 	</div>
-    
+
+	<div class="tabellone">
+	
+		<table>
+
+			<tr class="layout">
+				<td class="center no-border"></td>
+				<td class="center no-border">↓</td>
+				<td class="center no-border">↑</td>
+				<td class="center no-border">L</td>
+				<td class="center no-border">S</td>
+				<td class="center no-border">A</td>
+				<td class="center no-border"></td>
+			</tr>
+
+			<tr class="numeri">
+				<td class="center no-border">1</td>
+				<td class="scendere"> <input onClick="this.select();" type="tel" name="scendere-input" maxlength="1"> </td>
+				<td class="salire"> <input onClick="this.select();" type="tel" name="salire-input" maxlength="1" disabled> </td>
+				<td class="liberi"> <input onClick="this.select();" type="tel" name="liberi-input" maxlength="1"> </td>
+				<td class="secchi"> <input onClick="this.select();" type="tel" name="secchi-input" maxlength="1"> </td>
+				<td class="annunciati"> <input onClick="this.select();" type="tel" name="annunciati-input" maxlength="1"> </td>
+				<td class="center no-border"></td>
+			</tr>
+			<tr class="numeri">
+				<td class="center no-border">2</td>
+				<td class="scendere"> <input onClick="this.select();" type="tel" name="scendere-input" maxlength="2" disabled> </td>
+				<td class="salire"> <input onClick="this.select();" type="tel" name="salire-input" maxlength="2" disabled> </td>
+				<td class="liberi"> <input onClick="this.select();" type="tel" name="liberi-input" maxlength="2"> </td>
+				<td class="secchi"> <input onClick="this.select();" type="tel" name="secchi-input" maxlength="2"> </td>
+				<td class="annunciati"> <input onClick="this.select();" type="tel" name="annunciati-input" maxlength="2"> </td>
+				<td class="center no-border"></td>
+			</tr>
+			<tr class="numeri">
+				<td class="center no-border">3</td>
+				<td class="scendere"> <input onClick="this.select();" type="tel" name="scendere-input" maxlength="2" disabled> </td>
+				<td class="salire"> <input onClick="this.select();" type="tel" name="salire-input" maxlength="2" disabled> </td>
+				<td class="liberi"> <input onClick="this.select();" type="tel" name="liberi-input" maxlength="2"> </td>
+				<td class="secchi"> <input onClick="this.select();" type="tel" name="secchi-input" maxlength="2"> </td>
+				<td class="annunciati"> <input onClick="this.select();" type="tel" name="annunciati-input" maxlength="2"> </td>
+				<td class="center no-border"></td>
+			</tr>
+			<tr class="numeri">
+				<td class="center no-border">4</td>
+				<td class="scendere"> <input onClick="this.select();" type="tel" name="scendere-input" maxlength="2" disabled> </td>
+				<td class="salire"> <input onClick="this.select();" type="tel" name="salire-input" maxlength="2" disabled> </td>
+				<td class="liberi"> <input onClick="this.select();" type="tel" name="liberi-input" maxlength="2"> </td>
+				<td class="secchi"> <input onClick="this.select();" type="tel" name="secchi-input" maxlength="2"> </td>
+				<td class="annunciati"> <input onClick="this.select();" type="tel" name="annunciati-input" maxlength="2"> </td>
+				<td class="center no-border"></td>
+			</tr>
+			<tr class="numeri">
+				<td class="center no-border">5</td>
+				<td class="scendere"> <input onClick="this.select();" type="tel" name="scendere-input" maxlength="2" disabled> </td>
+				<td class="salire"> <input onClick="this.select();" type="tel" name="salire-input" maxlength="2" disabled> </td>
+				<td class="liberi"> <input onClick="this.select();" type="tel" name="liberi-input" maxlength="2"> </td>
+				<td class="secchi"> <input onClick="this.select();" type="tel" name="secchi-input" maxlength="2"> </td>
+				<td class="annunciati"> <input onClick="this.select();" type="tel" name="annunciati-input" maxlength="2"> </td>
+				<td class="center no-border"></td>
+			</tr>
+			<tr class="numeri">
+				<td class="center no-border">6</td>
+				<td class="scendere"> <input onClick="this.select();" type="tel" name="scendere-input" maxlength="2" disabled> </td>
+				<td class="salire"> <input onClick="this.select();" type="tel" name="salire-input" maxlength="2" disabled> </td>
+				<td class="liberi"> <input onClick="this.select();" type="tel" name="liberi-input" maxlength="2"> </td>
+				<td class="secchi"> <input onClick="this.select();" type="tel" name="secchi-input" maxlength="2"> </td>
+				<td class="annunciati"> <input onClick="this.select();" type="tel" name="annunciati-input" maxlength="2"> </td>
+				<td class="center no-border"></td>
+			</tr>
+			
+			<tr class="bonus">
+				<td class="center no-border">B</td>
+				<td class="scendere-bonus"> <input type="tel" name="scendere-bonus" class="bonus-bg-sotto" maxlength="3" readonly> </td>
+				<td class="salire-bonus"> <input type="tel" name="salire-bonus" class="bonus-bg-sotto" maxlength="3" readonly> </td>
+				<td class="liberi-bonus"> <input type="tel" name="liberi-bonus" class="bonus-bg-sotto" maxlength="3" readonly> </td>
+				<td class="secchi-bonus"> <input type="tel" name="secchi-bonus" class="bonus-bg-sotto" maxlength="3" readonly> </td>
+				<td class="annunciati-bonus"> <input type="tel" name="annunciati-bonus" class="bonus-bg-sotto" maxlength="3" readonly> </td>
+				<td class="center no-border">x2</td>
+			</tr>
+			
+			<tr class="combo scala">
+				<td class="center no-border">S</td>
+				<td class="scendere"> <input onClick="this.select();" type="tel" name="scendere-input" maxlength="2" disabled> </td>
+				<td class="salire"> <input onClick="this.select();" type="tel" name="salire-input" maxlength="2" disabled> </td>
+				<td class="liberi"> <input onClick="this.select();" type="tel" name="liberi-input" maxlength="2"> </td>
+				<td class="secchi"> <input onClick="this.select();" type="tel" name="secchi-input" maxlength="2"> </td>
+				<td class="annunciati"> <input onClick="this.select();" type="tel" name="annunciati-input" maxlength="2"> </td>
+				<td class="center no-border">+30</td>
+			</tr>
+			<tr class="combo full">
+				<td class="center no-border">F</td>
+				<td class="scendere"> <input onClick="this.select();" type="tel" name="scendere-input" maxlength="2" disabled> </td>
+				<td class="salire"> <input onClick="this.select();" type="tel" name="salire-input" maxlength="2" disabled> </td>
+				<td class="liberi"> <input onClick="this.select();" type="tel" name="liberi-input" maxlength="2"> </td>
+				<td class="secchi"> <input onClick="this.select();" type="tel" name="secchi-input" maxlength="2"> </td>
+				<td class="annunciati"> <input onClick="this.select();" type="tel" name="annunciati-input" maxlength="2"> </td>
+				<td class="center no-border">+30</td>
+			</tr>
+			<tr class="combo poker">
+				<td class="center no-border">P</td>
+				<td class="scendere"> <input onClick="this.select();" type="tel" name="scendere-input" maxlength="2" disabled> </td>
+				<td class="salire"> <input onClick="this.select();" type="tel" name="salire-input" maxlength="2" disabled> </td>
+				<td class="liberi"> <input onClick="this.select();" type="tel" name="liberi-input" maxlength="2"> </td>
+				<td class="secchi"> <input onClick="this.select();" type="tel" name="secchi-input" maxlength="2"> </td>
+				<td class="annunciati"> <input onClick="this.select();" type="tel" name="annunciati-input" maxlength="2"> </td>
+				<td class="center no-border">+20</td>
+			</tr>
+			<tr class="combo">
+				<td class="center no-border">m</td>
+				<td class="scendere"> <input onClick="this.select();" type="tel" name="scendere-input" maxlength="2" disabled> </td>
+				<td class="salire"> <input onClick="this.select();" type="tel" name="salire-input" maxlength="2" disabled> </td>
+				<td class="liberi"> <input onClick="this.select();" type="tel" name="liberi-input" maxlength="2"> </td>
+				<td class="secchi"> <input onClick="this.select();" type="tel" name="secchi-input" maxlength="2"> </td>
+				<td class="annunciati"> <input onClick="this.select();" type="tel" name="annunciati-input" maxlength="2"> </td>
+				<td class="center no-border"></td>
+			</tr>
+			<tr class="combo">
+				<td class="center no-border">M</td>
+				<td class="scendere"> <input onClick="this.select();" type="tel" name="scendere-input" maxlength="2" disabled> </td>
+				<td class="salire"> <input onClick="this.select();" type="tel" name="salire-input" maxlength="2" disabled> </td>
+				<td class="liberi"> <input onClick="this.select();" type="tel" name="liberi-input" maxlength="2"> </td>
+				<td class="secchi"> <input onClick="this.select();" type="tel" name="secchi-input" maxlength="2"> </td>
+				<td class="annunciati"> <input onClick="this.select();" type="tel" name="annunciati-input" maxlength="2"> </td>
+				<td class="center no-border"></td>
+			</tr>
+			<tr class="combo yaz">
+				<td class="center no-border">Y</td>
+				<td class="scendere"> <input onClick="this.select();" type="tel" name="scendere-input" maxlength="2" disabled> </td>
+				<td class="salire"> <input onClick="this.select();" type="tel" name="salire-input" maxlength="2"> </td>
+				<td class="liberi"> <input onClick="this.select();" type="tel" name="liberi-input" maxlength="2"> </td>
+				<td class="secchi"> <input onClick="this.select();" type="tel" name="secchi-input" maxlength="2"> </td>
+				<td class="annunciati"> <input onClick="this.select();" type="tel" name="annunciati-input" maxlength="2"> </td>
+				<td class="center no-border">+50</td>
+			</tr>
+			
+			<tr>
+				<td class="no-border"></td>
+				<td class="no-border"></td>
+				<td class="no-border"></td>
+				<td class="no-border"></td>
+				<td class="center no-border">x2</td>
+				<td class="center no-border">x3</td>
+				<td class="no-border"></td>
+			</tr>
+			
+			<tr class="totale">
+				<td class="center no-border"></td>
+				<td class="scendere-totale"> <input type="tel" name="scendere-input" maxlength="3" readonly> </td>
+				<td class="salire-totale"> <input type="tel" name="salire-input" maxlength="3" readonly> </td>
+				<td class="liberi-totale"> <input type="tel" name="liberi-input" maxlength="3" readonly> </td>
+				<td class="secchi-totale"> <input type="tel" name="secchi-input" maxlength="4" readonly> </td>
+				<td class="annunciati-totale"> <input type="tel" name="annunciati-input" maxlength="4" readonly> </td>
+				<td class="center no-border"></td>
+			</tr>
+
+
+		</table>
+		
+		<div class="risultato-finale">
+			<input type="text" name="risultato-finale" class="input-risultato-finale" value="RISULTATO" disabled readonly>
+		</div>
+		
+	</div>
+	
 	<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
 	<script src="js/main.js"></script>
