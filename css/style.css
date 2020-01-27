@@ -55,7 +55,10 @@ input:disabled {
 }
 .tabellone
 {
-    background-image: url(../img/green.png);
+    /* background-image: url(../img/bg-green.jpg); */
+    background: rgb(0,179,103);
+    background: linear-gradient(180deg, rgba(0,179,103,1) 0%, rgba(8,113,64,1) 100%);
+
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -115,8 +118,7 @@ input:disabled {
     opacity: 1;
     margin: 25% 5%;
     border-radius: 5px;
-    /* background: linear-gradient(180deg, rgba(208,208,208,1) 0%, rgba(233,233,233,1) 100%); */
-    background-image: url('../img/white.jpg');
+    background-image: url('../img/bg-wood.jpg');
 
     transform: translateX(0px);
     box-shadow: 0 0 10px 3px #00000038;
@@ -284,8 +286,15 @@ input:disabled {
 
     transition: all 0.4s ease-in-out;
 }
+
+.homepage * {
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0) !important; 
+    -webkit-focus-ring-color: rgba(255, 255, 255, 0) !important; 
+    outline: none !important;
+}
+
 .homepage.swiped {
-    transform: translateY(calc(-100vh));
+    transform: translateY(calc(-120vh));
 }
 .logo-container {
     width: 100%; height: 35%;
@@ -349,4 +358,14 @@ input:disabled {
 }
 .hide {
     display: none;
+}
+
+.se-pre-con {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url(../img/loading.gif) center no-repeat #fff;
 }
