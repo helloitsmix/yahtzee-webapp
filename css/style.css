@@ -78,7 +78,7 @@ input:disabled {
     position: fixed;
     left: 0; top: 0;
 
-    z-index: 5;
+    z-index: 15;
     opacity: 0;
     overflow-y: hidden;
     transition: opacity 0.25s, margin 0.25s, height 0.25s;
@@ -181,7 +181,6 @@ input:disabled {
   opacity: 0;
   width: 0;
   height: 0;
-  z-index: 10;
 }
 
 /* The slider */
@@ -195,7 +194,6 @@ input:disabled {
   background-color: #ccc;
   -webkit-transition: .4s;
   transition: .4s;
-  z-index: 10;
 }
 
 .settings-content .slider:before {
@@ -240,7 +238,7 @@ input:disabled {
     position: fixed;
     right: 15px;
     top: 15px;
-    z-index: 2;
+    z-index: 10;
 }
 .circle {
     width: 30px;
@@ -380,6 +378,7 @@ input:disabled {
     background-repeat: no-repeat;
     background-position: center;
     transform: translateX(0vw) rotate(0deg);
+    z-index: 5;
     
     transition: all 1.5s ease-in-out;
 }
