@@ -3,10 +3,7 @@
     font-family: 'Mansalva-Regular', cursive;
     /* font-weight: bold; */
 }
-.revue {
-    font-family: 'RevueBT-Regular', Fallback, sans-serif;
-}
-.revue * {
+.revue, .revue * {
     font-family: 'RevueBT-Regular', Fallback, sans-serif;
 }
 html {
