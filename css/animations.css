@@ -1,0 +1,47 @@
+.score-message {
+    width: 100vw;
+    height: auto;
+    position: fixed;
+    background-color: transparent;
+    z-index: 5;
+    text-align: center;
+}
+
+.animated-text, .animated-text-1, .animated-text-2, .animated-text-3  {
+    position: relative;
+    font-weight: 900;
+    font-size: 4em;
+    margin-top: 10vh;
+    -webkit-text-stroke: 2px white;
+}
+
+.animated-text-1 .text-wrapper, .animated-text-2 .text-wrapper, .animated-text-3 .text-wrapper {
+    position: relative;
+    display: inline-block;
+    padding-top: 0.2em;
+    padding-right: 0.05em;
+    padding-bottom: 0.1em;
+    overflow: hidden;
+}
+
+.letters {
+    text-shadow: 0 0 10px #00000050;
+}
+
+
+.animated-text-1 .letter {
+    display: inline-block;
+    line-height: 1em;
+}
+
+.animated-text-2 .letter {
+    transform-origin: 0 100%;
+    display: inline-block;
+    line-height: 1em;
+}
+
+.animated-text-3 .letter {
+    transform-origin: 50% 100%;
+    display: inline-block;
+    line-height: 1em;
+}

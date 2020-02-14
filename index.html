@@ -8,8 +8,8 @@
 	<link rel="manifest" href="manifest.json" crossorigin="use-credentials">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 	<link rel="stylesheet" href="css/webfonts.css">
+	<link rel="stylesheet" href="css/animations.css">
 	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/transitions.css">
 </head>
 <body>
 
@@ -26,17 +26,14 @@
 		</div>
 	</div>
 
-	<div class="score-message">
-		<h1 class="revue">
-			<span>Y</span>
-			<span>a</span>
-			<span>h</span>
-			<span>t</span>
-			<span>z</span>
-			<span>e</span>
-			<span>e</span>
-			<span>!</span>
+	<div class="score-message revue hide" id="score-message-div">
+
+		<h1 class="animated-text">
+			<span class="text-wrapper">
+				<span class="letters"></span>
+			</span>
 		</h1>
+
 	</div>
 
 	<div class="settings-page">
@@ -231,10 +228,12 @@
 	
 	<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 
 	<script src="js/menu.js"></script>
 	<script src="js/settings.js"></script>
 	<script src="js/yahtzee.js"></script>
+	<script src="js/animations.js"></script>
 	<script src="js/main.js"></script>
 </body>
 </html>

@@ -368,35 +368,3 @@ input:disabled {
     background: url(../img/dice.gif) center no-repeat #02dbfa;
     background-size: 75%;
 }
-
-.score-message {
-    width: 100vw;
-    height: 50vh;
-    position: fixed;
-    background-color: transparent;
-    background-size: 65%;
-    background-repeat: no-repeat;
-    background-position: center;
-    transform: translateX(0vw) rotate(0deg);
-    z-index: 5;
-    
-    transition: all 1.5s ease-in-out;
-}
-
-.score-message.left {
-    transform: translateX(-100vw) rotate(-40deg);
-}
-
-.score-message.right {
-    transform: translateX(100vw) rotate(+40deg);
-}
-
-.score-message.small {
-    transform: scale(0.8);
-    opacity: 0;
-}
-
-.score-message.big {
-    transform: scale(1.3);
-    opacity: 1;
-}

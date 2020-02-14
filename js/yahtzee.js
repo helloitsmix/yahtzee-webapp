@@ -88,33 +88,16 @@ let CalcoloAggiunto = item => {
     {
         $(item).val(riga == 'scala' || riga == 'full' ? parseInt($(item).val()) + 30 : riga == 'poker' ? parseInt($(item).val()) + 20 : parseInt($(item).val()) + 50);
 
-        // riga = scala, full, poker, yaz
-        $('.score-message').css('background-image','url(img/'+riga+'-message.png)');
+        $('.score-message .letters').text(riga === 'yaz' ? 'YAHTZEE!' : riga.toUpperCase() + '!');
 
-        let randomAnimation = 0;// Math.floor((Math.random() * 3) + 1); // Da 1 a 3
+        let randomAnimation = Math.floor((Math.random() * 3) + 1); // Da 1 a 3
+        $('.score-message').children().attr('class','animated-text-'+randomAnimation);
+        $('#score-message-div').removeClass('hide');
+
+        $(TextAnimation(randomAnimation)).promise().done(function() {
+            console.log('finita');
+        });
         
-        switch (randomAnimation) {
-            case 1:
-                $('.score-message').switchClass('hide','left');
-                $('.score-message').removeClass('left',200).delay(1500).addClass('right',200).delay(1000).switchClass('right','hide');
-                break;
-
-            case 2:
-                $('.score-message').switchClass('hide','small');
-                $('.score-message').switchClass('small','big',500).delay(1600).switchClass('big','small',500).delay(1200).switchClass('small','hide',100);
-                break;
-        
-            case 3:
-                break;
-
-            default:
-                $('.score-message').attr('class','score-message hide');
-                break;
-        }
-
-        console.log('finita');
-        $('.score-message').attr('class','score-message hide');
-
     }
 
 };
