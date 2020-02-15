@@ -75,8 +75,9 @@ input:disabled {
     box-shadow: 0 0 5px 5px black;
 }
 .settings-page {
-    width: 90%; height: 70%;
-    margin: 20% 0 0 5%;
+    width: 90%;
+    height: 75vh;
+    margin: 10vh 5vw;
     padding: 5px;
 
     position: fixed;
@@ -127,9 +128,9 @@ input:disabled {
 }
 
 .open {
-    height: 75%;
+    height: 75vh;
+    margin: 12.5vh 5vw;
     opacity: 1;
-    margin: 25% 5%;
     border-radius: 5px;
     background-image: url('../img/bgs/bg-wood.jpg');
 

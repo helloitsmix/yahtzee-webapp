@@ -36,7 +36,6 @@ $('.slider').click(function(e) {
 
 $('#settings-name').click(function(e){
     let nuovoNome = prompt("Inserisci un nuovo nome:");
-    console.log(nuovoNome.length);
 
     if (nuovoNome !== null && nuovoNome !== "" && nuovoNome.length <= 15) {
         SetSettingsItem('username', nuovoNome);
