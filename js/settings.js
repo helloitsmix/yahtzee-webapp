@@ -34,10 +34,24 @@ $('.slider').click(function(e) {
 
 });
 
+$('#settings-name').click(function(e){
+    let nuovoNome = prompt("Inserisci un nuovo nome:");
+    console.log(nuovoNome.length);
+
+    if (nuovoNome !== null && nuovoNome !== "" && nuovoNome.length <= 15) {
+        SetSettingsItem('username', nuovoNome);
+        UpdateSettingsName(nuovoNome);
+    }
+});
+
 let chiudiSettings = () => {
     $('.icon').removeClass('close');
     $('.settings-page').removeClass('open');
     $('.tabellone').removeClass('blurred');
+};
+
+let UpdateSettingsName = (nome) => {
+    $('#settings-name .name').text('Ciao ' + nome + '!')
 };
 
 let SetGrigliaSmall = () => {

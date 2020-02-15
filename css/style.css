@@ -101,18 +101,29 @@ input:disabled {
 .settings-content div {
     font-size: 25px;
     color: white;
-    padding: 30px 0 0 15px;
+    padding: 15px;
 }
 
-.settings-content div:first-child {
-    padding: 15px 0 0 15px;
+.settings-content #settings-name {
+    border-bottom: 1px white dashed;
+}
+
+.settings-content #settings-name .pencil-icon {
+    float: right;
+    height: 25px;
+    width: 25px;
+    background: url(../img/svg/pencil-alt-solid.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 7.5px;
+    filter: invert(1);
+    opacity: 0.3;
 }
 
 .settings-page #high-score span {
-    border-bottom: 2px solid;
-    border-bottom-style: dashed;
+    border-bottom: 2px white dashed;
     float: right;
-    margin-right: 15px;
 }
 
 .open {
@@ -120,7 +131,7 @@ input:disabled {
     opacity: 1;
     margin: 25% 5%;
     border-radius: 5px;
-    background-image: url('../img/bg-wood.jpg');
+    background-image: url('../img/bgs/bg-wood.jpg');
 
     transform: translateX(0px);
     box-shadow: 0 0 10px 3px #00000038;
@@ -174,7 +185,6 @@ input:disabled {
     width: 55px;
     height: 30px;
     float: right;
-    margin-right: 15px;
     margin-top: 5px;
 }
 
@@ -279,7 +289,7 @@ input:disabled {
     height: 100vh;
     position: fixed;
     z-index: 999;
-    background: url(../img/bg-home.jpg);
+    background: url(../img/bgs/bg-home.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -365,6 +375,6 @@ input:disabled {
 	width: 100%;
 	height: 100%;
 	z-index: 9999;
-    background: url(../img/dice.gif) center no-repeat #02dbfa;
+    background: url(../img/gif/dice.gif) center no-repeat #02dbfa;
     background-size: 75%;
 }

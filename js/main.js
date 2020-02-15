@@ -90,6 +90,7 @@ let CheckIniziale = () => {
             $('#input-home').addClass('hide');
             $('.message').removeClass('hide');
             $('.message').text(CreaMessaggioRandom());
+            UpdateSettingsName(GetSettingsItem('username'));
         }
 
         if (GetSettingsItem('table-size') === 'small')

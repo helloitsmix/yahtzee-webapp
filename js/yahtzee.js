@@ -94,9 +94,7 @@ let CalcoloAggiunto = item => {
         $('.score-message').children().attr('class','animated-text-'+randomAnimation);
         $('#score-message-div').removeClass('hide');
 
-        $(TextAnimation(randomAnimation)).promise().done(function() {
-            console.log('finita');
-        });
+        TextAnimation(randomAnimation);
         
     }
 

@@ -30,7 +30,10 @@ function TextAnimation (numero)
                 translateZ: 0,
                 duration: 750,
                 delay: (el, i) => 50 * i
-            });
+            })
+            .complete = function() {
+                HideMessage();
+            };
             break;
 
         case 2:
@@ -60,11 +63,14 @@ function TextAnimation (numero)
                 duration: 750,
                 easing: "easeOutExpo",
                 delay: (el, i) => 50 * i
-            });
+            })
+            .complete = function() {
+                HideMessage();
+            };
             break;
 
         case 3:
-            anime
+            let animazione3 = anime
             .timeline({
                 loop: false,
             })
@@ -85,9 +91,45 @@ function TextAnimation (numero)
                 duration: 250,
                 elasticity: 0,
                 delay: (el, i) => 45 * (i+1)
-            });
+            })
+            .complete = function() {
+                HideMessage();
+            };
+            break;
+        
+        case 4:
+            anime
+            .timeline({
+                loop: false
+            })
+            .add({
+                targets: '.animated-text-4 .letter',
+                rotateY: [-90, 0],
+                duration: 1400,
+                delay: (el, i) => 45 * i
+            })
+            .add({
+                targets: '.animated-text-4 .letter',
+                rotateY: [0, -90],
+                duration: 100,
+                elasticity: 0,
+                delay: (el, i) => 45 * i
+            })
+            .complete = function() {
+                HideMessage();
+            };
+            break;
+
+        default:
+            HideMessage();
             break;
     }
 
+    return true;
+}
+
+function HideMessage()
+{
+    $('#score-message-div').addClass('hide');
     return true;
 }

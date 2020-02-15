@@ -10,6 +10,7 @@ $('#button-home').click( e => {
         if ($('#input-home').val() !== "")
         {
             SetSettingsItem('username', $('#input-home').val());
+            UpdateSettingsName($('#input-home').val());
             $('.homepage').addClass('swiped');
         }
     }
