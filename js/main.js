@@ -38,7 +38,7 @@ let Setup = () => {
         CalcoloBonus(e.target);
     });
 
-    $('.scala input, .full input, .poker input, .yaz input').keyup( e => { // TUTTE LE CASELLE COMBO CON "+XX" PUNTI
+    $('.scala input, .full input, .poker input, .yaz input').keyup( e => { // TUTTE LE CASELLE COMBO CON '+XX' PUNTI
         clearInterval(intervalloCalcoloAggiunto);
         intervalloCalcoloAggiunto = setInterval(function() {
             CalcoloAggiunto(e.target);
@@ -46,19 +46,24 @@ let Setup = () => {
         }, 1000);
     });
     
-    $('.numeri input, .combo input').on('focusout propertychange', (e) => { // TUTTE LE CASELLE, NUMERI + COMBO
+    $('.numeri input, .combo input').on('focusout propertychange', e => { // TUTTE LE CASELLE, NUMERI + COMBO
         TotaleCheck(e.target);
         RisultatoCheck();
         NumeroZeroCheck();
 
         clearInterval(intervalloSalvataggioDati);
         intervalloSalvataggioDati = setInterval(function() {
-            SalvataggioDati();
-            console.log('Saved');
+            if(SalvataggioDati())
+            {
+                console.log('Saved');
+                $('.check-icon').show('fast').delay(600).fadeOut('fast');
+            }
             clearInterval(intervalloSalvataggioDati);
         }, 1100);
 
     });
+
+    $('.check-icon').hide();
 
 };
 
@@ -142,11 +147,12 @@ let SalvataggioDati = () => {
         arrayDaSalvare[index] = $(item).val();
     });
     SetSettingsItem('data', arrayDaSalvare);
+    return true;
 };
 
 let TriggerFocusOutColonne = () => {
     $(nomiColonne).each( (index, colonna) => {
-        $('.' + colonna + ' input').eq(0).trigger("focusout");
+        $('.' + colonna + ' input').eq(0).trigger('focusout');
     });
 };
 
