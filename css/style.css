@@ -306,11 +306,15 @@ input:disabled {
 }
 .logo-container {
     width: 100%; height: 35%;
+}
+.logo-container .logo {
     background: url('../img/logo-yaz-dices.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-}
+    height: 100%;
+    margin: 0 5%;
+}    
 .input-container {
     width: 100%; height: 35%;
     position: relative;
