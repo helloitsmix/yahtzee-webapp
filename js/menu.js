@@ -3,7 +3,7 @@ $(window).on('load', function () {
     $(".se-pre-con").fadeOut("slow");;
 });
 
-$('#button-home').click( e => {
+$('#button-play-advanced').click( e => {
     e.preventDefault();
     if (GetSettingsItem('username') === null)
     {
@@ -11,11 +11,44 @@ $('#button-home').click( e => {
         {
             SetSettingsItem('username', $('#input-home').val());
             UpdateSettingsName($('#input-home').val());
+            $('#tabellone-classic').hide();
+            $('#tabellone-advanced').show();
             $('.homepage').addClass('swiped');
+        }
+        else
+        {
+            $('#input-home').addClass('empty');
         }
     }
     else
     {
+        $('#tabellone-classic').hide();
+        $('#tabellone-advanced').show();
+        $('.homepage').addClass('swiped');
+    }
+});
+
+$('#button-play-classic').click( e => {
+    e.preventDefault();
+    if (GetSettingsItem('username') === null)
+    {
+        if ($('#input-home').val() !== "")
+        {
+            SetSettingsItem('username', $('#input-home').val());
+            UpdateSettingsName($('#input-home').val());
+            $('#tabellone-classic').show();
+            $('#tabellone-advanced').hide();
+            $('.homepage').addClass('swiped');
+        }
+        else
+        {
+            $('#input-home').addClass('empty');
+        }
+    }
+    else
+    {
+        $('#tabellone-classic').show();
+        $('#tabellone-advanced').hide();
         $('.homepage').addClass('swiped');
     }
 });

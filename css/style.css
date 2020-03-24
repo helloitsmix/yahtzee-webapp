@@ -61,14 +61,15 @@ input:disabled {
 .highlight-red {
     background-color: #fe5722;
 }
+.highlight-classic {
+    background-color: #4b4b4b;
+}
 .tabellone
 {
-
     /* background-image: url('../img/bg-green.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover; */
-
     min-height: 100vh;
     padding-top: 15px;
 }
@@ -125,7 +126,7 @@ input:disabled {
     opacity: 0.3;
 }
 
-.settings-page #high-score span {
+.settings-page .high-score span {
     border-bottom: 2px white dashed;
     float: right;
 }
@@ -346,28 +347,34 @@ input:disabled {
     left: 0;
     right: 0;
 }
+.empty{
+    border: 2px red solid;
+}
 .button-container {
     width: 100%; height: 30%;
     position: relative;
 }
-.button-container #button-home { 
-    width: 50%; height: 80px;
+.button-container .button-play {
+    width: 90%;
+    padding: 5px 15px;
     margin: auto;
     text-align: center;
-    top: 10%;
     position: absolute;
+    bottom: 10%;
     left: 0;
     right: 0;
     border: 4px solid black;
     border-radius: 5px;
     color: white;
     background-color: #c62828;
-    font-size: 40px;
+    font-size: 35px;
     transition: 0.2s;
 }
-.button-container #button-home:focus {
-    color: #c62828;
-    background-color: white;
+.button-container .button-play:focus {
+    background-color: #941e1e;
+}
+.button-container #button-play-classic {
+    bottom: 105px;
 }
 .hide {
     display: none;

@@ -5,9 +5,10 @@ $('#hamburger-settings').click( function() {
     return false;
 });
 
-$('#riprendi').click(function(e) {
+$('#torna-menu').click(function(e) {
     e.preventDefault();
     chiudiSettings();
+    $('.homepage').removeClass('swiped');
     return false;
 });
 
@@ -72,29 +73,45 @@ let NuovaPartita = () => {
         'red',
     ];
 
-    arrayDaSalvare = new Array(60);
+    if ($('#tabellone-advanced').is(":visible"))
+    {
+        arrayDaSalvareAdvanced = new Array(60).fill('');
+        $('#tabellone-advanced .numeri input, #tabellone-advanced .combo input').val(''); // TUTTE LE CASELLE TORNANO VUOTE
+        $('#tabellone-advanced .bonus input').val(0);
+        $('#tabellone-advanced .bonus input').attr('class', 'bonus-bg-sotto');
 
-    $('.numeri input, .combo input').val(''); // TUTTE LE CASELLE TORNANO VUOTE
-    $('.bonus input').val(0);
-    $('.bonus input').attr('class', 'bonus-bg-sotto');
+        $('#tabellone-advanced .scendere input').prop('disabled', true);
+        $('#tabellone-advanced .scendere input').eq(0).prop('disabled', false);
+        
+        $('#tabellone-advanced .salire input').prop('disabled', true);
+        $('#tabellone-advanced .salire input').eq(11).prop('disabled', false);
+        
+        $('#tabellone-advanced .totale input').val('');
+        $('#tabellone-advanced .totale input').removeClass('highlight-yellow');
+        $('#tabellone-advanced .totale input').removeClass('highlight-green');
+        $('#tabellone-advanced .totale input').removeClass('highlight-blue');
+        $('#tabellone-advanced .totale input').removeClass('highlight-pink');
+        $('#tabellone-advanced .totale input').removeClass('highlight-red');
     
-    $('.scendere input').prop('disabled', true);
-    $('.scendere input').eq(0).prop('disabled', false);
-    
-    $('.salire input').prop('disabled', true);
-    $('.salire input').eq(11).prop('disabled', false);
-    
-    $('.totale input').val('');
-    $('.totale input').removeClass('highlight-yellow');
-    $('.totale input').removeClass('highlight-green');
-    $('.totale input').removeClass('highlight-blue');
-    $('.totale input').removeClass('highlight-pink');
-    $('.totale input').removeClass('highlight-red');
+        $('#tabellone-advanced .input-risultato-finale').val('RISULTATO');
+        $('#tabellone-advanced .input-risultato-finale').removeClass('active');
+        $('#tabellone-advanced .input-risultato-finale').prop('disabled', true);
 
-    $('.input-risultato-finale').val('RISULTATO');
-    $('.input-risultato-finale').removeClass('active');
-    $('.input-risultato-finale').prop('disabled', true);
+        SetSettingsItem('data-advanced', new Array(60).fill(''));
+    } 
+    else if ($('#tabellone-classic').is(":visible")) 
+    {
+        arrayDaSalvareClassic = new Array(14).fill('');
+        $('#tabellone-classic .numeri input, #tabellone-classic .combo input').val(''); // TUTTE LE CASELLE TORNANO VUOTE
+        $('#tabellone-classic .bonus input').val(0);
+        $('#tabellone-classic .bonus input').attr('class', 'bonus-bg-sotto');
+
+        $('#tabellone-classic .input-risultato-finale').val('RISULTATO');
+        $('#tabellone-classic .input-risultato-finale').removeClass('active');
+        $('#tabellone-classic .input-risultato-finale').prop('disabled', true);
+
+        SetSettingsItem('data-classic', new Array(14).fill(''));
+    }
 
     chiudiSettings();
-    SetSettingsItem('data', new Array(60));
 };

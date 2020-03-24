@@ -24,7 +24,8 @@
 			<input type="text" id="input-home" maxlength="15" placeholder="Inserisci il tuo nome">
 		</div>
 		<div class="button-container">
-			<button id="button-home">Gioca</button>
+			<button class="button-play" id="button-play-classic">Classico</button>
+			<button class="button-play" id="button-play-advanced">Avanzato</button>
 		</div>
 	</div>
 
@@ -52,9 +53,10 @@
 				</label>
 			</div>
 			
-			<div id="high-score">Record: <span>0</span></div>
+			<div id="high-score-classic" class="high-score">Record classico: <span>0</span></div>
+			<div id="high-score-advanced" class="high-score">Record avanzato: <span>0</span></div>
 
-			<div id="riprendi">Riprendi</div>
+			<div id="torna-menu">Torna al menu</div>
 
 		</div>
 	</div>
@@ -76,7 +78,116 @@
 		</div>
 	</div>
 
-	<div class="tabellone">
+	<div class="tabellone" id="tabellone-classic">
+
+		<table>
+
+			<tr class="layout">
+				<td class="center no-border"></td>
+				<td class="center no-border"></td>
+				<td class="center no-border"></td>
+			</tr>
+			
+			<tr class="numeri">
+				<td class="center no-border">1</td>
+				<td class="classic"> <input onclick="this.select();" type="tel" name="classic-input" maxlength="1"> </td>
+				<td class="center no-border"></td>
+			</tr>
+
+			<tr class="numeri">
+				<td class="center no-border">2</td>
+				<td class="classic"> <input onclick="this.select();" type="tel" name="classic-input" maxlength="2"> </td>
+				<td class="center no-border"></td>
+			</tr>
+
+			<tr class="numeri">
+				<td class="center no-border">3</td>
+				<td class="classic"> <input onclick="this.select();" type="tel" name="classic-input" maxlength="2"> </td>
+				<td class="center no-border"></td>
+			</tr>
+	
+			<tr class="numeri">
+				<td class="center no-border">4</td>
+				<td class="classic"> <input onclick="this.select();" type="tel" name="classic-input" maxlength="2"> </td>
+				<td class="center no-border"></td>
+			</tr>
+	
+			<tr class="numeri">
+				<td class="center no-border">5</td>
+				<td class="classic"> <input onclick="this.select();" type="tel" name="classic-input" maxlength="2"> </td>
+				<td class="center no-border"></td>
+			</tr>
+	
+			<tr class="numeri">
+				<td class="center no-border">6</td>
+				<td class="classic"> <input onclick="this.select();" type="tel" name="classic-input" maxlength="2"> </td>
+				<td class="center no-border"></td>
+			</tr>
+
+			<tr class="bonus">
+				<td class="center no-border">B</td>
+				<td class="classic-bonus"> <input type="tel" name="classic-bonus" class="bonus-bg-sotto" maxlength="3" readonly> </td>
+				<td class="center no-border">+35</td>
+			</tr>
+
+			<tr class="combo">
+				<td class="center no-border">SP</td>
+				<td class="classic"> <input type="tel" name="classic-sp" class="changeable" data-value="30" maxlength="2" readonly> </td>
+				<td class="center no-border"></td>
+			</tr>
+
+			<tr class="combo">
+				<td class="center no-border">SG</td>
+				<td class="classic"> <input type="tel" name="classic-sg" class="changeable" data-value="40" maxlength="2" readonly> </td>
+				<td class="center no-border"></td>
+			</tr>
+
+			<tr class="combo">
+				<td class="center no-border">3P</td>
+				<td class="classic"> <input onclick="this.select();" type="tel" name="classic-tris" maxlength="2"> </td>
+				<td class="center no-border"></td>
+			</tr>
+
+			<tr class="combo">
+				<td class="center no-border">4P</td>
+				<td class="classic"> <input onclick="this.select();" type="tel" name="classic-poker" maxlength="2"> </td>
+				<td class="center no-border"></td>
+			</tr>
+
+			<tr class="combo">
+				<td class="center no-border">F</td>
+				<td class="classic"> <input type="tel" name="classic-full" class="changeable" data-value="25" maxlength="2" readonly> </td>
+				<td class="center no-border"></td>
+			</tr>
+
+			<tr class="combo">
+				<td class="center no-border">Y</td>
+				<td class="classic"> <input type="tel" name="classic-yaz" class="changeable" data-value="50" maxlength="2" readonly> </td>
+				<td class="center no-border"></td>
+			</tr>
+
+			<tr class="combo">
+				<td class="center no-border">2Y</td>
+				<td class="classic"> <input type="tel" name="classic-yazdue" class="changeable" data-value="100" maxlength="2" readonly> </td>
+				<td class="center no-border"></td>
+			</tr>
+
+			<tr class="combo">
+				<td class="center no-border">CH</td>
+				<td class="classic"> <input onclick="this.select();" type="tel" name="classic-chance" maxlength="2"> </td>
+				<td class="center no-border"></td>
+			</tr>
+	
+		</table>
+
+		<div class="risultato-finale">
+			<input type="text" name="risultato-finale" class="input-risultato-finale" value="RISULTATO" disabled readonly>
+			<p id="nuovo-record" style="display: none; padding-top: 10px; color: white;">NUOVO RECORD!</p>
+		</div>
+
+	</div>
+
+	<div class="tabellone" id="tabellone-advanced">
 	
 		<table>
 
@@ -235,6 +346,7 @@
 		
 		<div class="risultato-finale">
 			<input type="text" name="risultato-finale" class="input-risultato-finale" value="RISULTATO" disabled readonly>
+			<p id="nuovo-record" style="display: none; padding-top: 10px; color: white;">NUOVO RECORD!</p>
 		</div>
 		
 	</div>
@@ -245,7 +357,8 @@
 
 	<script src="js/menu.js"></script>
 	<script src="js/settings.js"></script>
-	<script src="js/yahtzee.js"></script>
+	<script src="js/classic.js"></script>
+	<script src="js/advanced.js"></script>
 	<script src="js/animations.js"></script>
 	<script src="js/main.js"></script>
 </body>

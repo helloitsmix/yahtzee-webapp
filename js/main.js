@@ -15,27 +15,33 @@ let colori = [
 
 let defaultSettings = {
     'table-size': 'large',
-    'high-score': 0,
+    'high-score-classic': 0,
+    'high-score-advanced': 0,
     'username': null,
-    'data': new Array(60),
+    'data-classic': new Array(14).fill(''),
+    'data-advanced': new Array(60).fill(''),
 };
 
 let intervalloCalcoloAggiunto = null;
 let intervalloSalvataggioDati = null;
-let arrayDaSalvare = new Array(60);
+let arrayDaSalvareClassic = new Array(14).fill('');
+let arrayDaSalvareAdvanced = new Array(60).fill('');
 
 let Setup = () => {
     
     $('.bonus input').val(0);
 
-    $('.scendere input').on('input propertychange', () => { // CASELLE A SCENDERE
+    $('#tabellone-advanced .scendere input').on('input propertychange', () => { // CASELLE A SCENDERE
         DownUnlock();
     });
-    $('.salire input').on('input propertychange', () => { // CASELLE A SALIRE
+    $('#tabellone-advanced .salire input').on('input propertychange', () => { // CASELLE A SALIRE
         UpUnlock();
     });
-    $('.numeri input').on('input propertychange', e => { // TUTTE LE CASELLE NUMERI 1-6
-        CalcoloBonus(e.target);
+    $('#tabellone-classic .numeri input').on('input propertychange', e => { // TUTTE LE CASELLE NUMERI 1-6 CLASSIC
+        CalcoloBonusClassic();
+    });
+    $('#tabellone-advanced .numeri input').on('input propertychange', e => { // TUTTE LE CASELLE NUMERI 1-6 ADVANCED
+        CalcoloBonusAdvanced(e.target);
     });
 
     $('.scala input, .full input, .poker input, .yaz input').keyup( e => { // TUTTE LE CASELLE COMBO CON '+XX' PUNTI
@@ -45,25 +51,32 @@ let Setup = () => {
             clearInterval(intervalloCalcoloAggiunto);
         }, 1000);
     });
-    
-    $('.numeri input, .combo input').on('focusout propertychange', e => { // TUTTE LE CASELLE, NUMERI + COMBO
-        TotaleCheck(e.target);
-        RisultatoCheck();
-        NumeroZeroCheck();
 
+    $('.numeri input, .combo input').on('focusout propertychange', e => { // TUTTE LE CASELLE, NUMERI + COMBO
+        NumeroZeroCheck();
+        
         clearInterval(intervalloSalvataggioDati);
         intervalloSalvataggioDati = setInterval(function() {
             if(SalvataggioDati())
             {
-                console.log('Saved');
                 $('.check-icon').show('fast').delay(600).fadeOut('fast');
             }
             clearInterval(intervalloSalvataggioDati);
         }, 1100);
+    });
+    
+    $('#tabellone-classic .numeri input, #tabellone-classic .combo input').on('focusout propertychange', e => { // TUTTE LE CASELLE, NUMERI + COMBO CLASSIC
+        TotaleCheckClassic(e.target);        
+    });
 
+    $('#tabellone-advanced .numeri input, #tabellone-advanced .combo input').on('focusout propertychange', e => { // TUTTE LE CASELLE, NUMERI + COMBO ADVANCED
+        TotaleCheckAdvanced(e.target);
+        RisultatoCheck();
     });
 
     $('.check-icon').hide();
+    $('#tabellone-classic').hide();
+    $('#tabellone-advanced').hide();
 
 };
 
@@ -104,20 +117,33 @@ let CheckIniziale = () => {
             $('#slider-griglia').prop('checked', true);
         }
 
-        if (GetSettingsItem('high-score') !== 0)
+        if (GetSettingsItem('high-score-classic') !== 0)
         {
-            $('#high-score span').text(GetSettingsItem('high-score'))
+            $('#high-score-classic span').text(GetSettingsItem('high-score-classic'))
         }
 
-        let arrayDaLocalStorage = GetSettingsItem('data');
+        if (GetSettingsItem('high-score-advanced') !== 0)
+        {
+            $('#high-score-advanced span').text(GetSettingsItem('high-score-advanced'))
+        }
 
-        $('.numeri input, .combo input').each( (index) => {
-            $('.numeri input, .combo input').eq(index).val(arrayDaLocalStorage[index]);
-            arrayDaSalvare[index] = arrayDaLocalStorage[index];
+        let arrayDaLocalStorageClassic = GetSettingsItem('data-classic');
+        let arrayDaLocalStorageAdvanced = GetSettingsItem('data-advanced');
+
+        $('#tabellone-advanced .numeri input, #tabellone-advanced .combo input').each( (index) => {
+            $('#tabellone-advanced .numeri input, #tabellone-advanced .combo input').eq(index).val(arrayDaLocalStorageAdvanced[index]);
+            arrayDaSalvareAdvanced[index] = arrayDaLocalStorageAdvanced[index];
+        });
+
+        $('#tabellone-classic .classic input').each( (index) => {
+            $('#tabellone-classic .classic input').eq(index).val(arrayDaLocalStorageClassic[index]);
+            arrayDaSalvareClassic[index] = arrayDaLocalStorageClassic[index];
         });
     }
 
     DisabledUpDownCheck();
+
+    CalcoloBonusClassic();
     
     $(nomiColonne).each( (index, colonna) => {
         let bonusPoints = 0;
@@ -139,14 +165,17 @@ let CheckIniziale = () => {
     });
 
     TriggerFocusOutColonne();
-
 };
 
 let SalvataggioDati = () => {
-    $('.numeri input, .combo input').each( (index, item) => {
-        arrayDaSalvare[index] = $(item).val();
+    $('#tabellone-advanced .numeri input, #tabellone-advanced .combo input').each( (index, item) => {
+        arrayDaSalvareAdvanced[index] = $(item).val();
     });
-    SetSettingsItem('data', arrayDaSalvare);
+    $('#tabellone-classic .numeri input, #tabellone-classic .combo input').each( (index, item) => {
+        arrayDaSalvareClassic[index] = $(item).val();
+    });
+    SetSettingsItem('data-advanced', arrayDaSalvareAdvanced);
+    SetSettingsItem('data-classic', arrayDaSalvareClassic);
     return true;
 };
 
@@ -154,6 +183,7 @@ let TriggerFocusOutColonne = () => {
     $(nomiColonne).each( (index, colonna) => {
         $('.' + colonna + ' input').eq(0).trigger('focusout');
     });
+    $('.classic input').eq(0).trigger('focusout');
 };
 
 Setup();

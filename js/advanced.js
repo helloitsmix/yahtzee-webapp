@@ -1,8 +1,8 @@
 let DisabledUpDownCheck = () => {
-    $('.scendere input').each( () => { DownUnlock(); });
-    $('.salire input').each( () => { UpUnlock(); });
-    $('.scendere input').eq(0).prop('disabled', false);
-    $('.salire input').eq(11).prop('disabled', false);
+    $('#tabellone-advanced .scendere input').each( () => { DownUnlock(); });
+    $('#tabellone-advanced .salire input').each( () => { UpUnlock(); });
+    $('#tabellone-advanced .scendere input').eq(0).prop('disabled', false);
+    $('#tabellone-advanced .salire input').eq(11).prop('disabled', false);
 };
 
 let NumeroZeroCheck = () => {
@@ -18,21 +18,21 @@ let NumeroZeroCheck = () => {
     });
 };
 
-let CalcoloBonus = item => {
+let CalcoloBonusAdvanced = item => {
 
     let bonusPoints = 0;
-    $('.numeri .' + $(item).parent().attr('class') + ' input').each( (index, item) => {
+    $('#tabellone-advanced .numeri .' + $(item).parent().attr('class') + ' input').each( (index, item) => {
         if ( !isNaN( parseInt( $(item).val() )))
             bonusPoints += parseInt( $(item).val() );
     });
     if ( bonusPoints >= 60 ) {
-        $('.bonus .' + $(item).parent().attr('class') + '-bonus input').val(bonusPoints * 2);
-        $('.bonus .' + $(item).parent().attr('class') + '-bonus input').addClass('bonus-bg-sopra');
-        $('.bonus .' + $(item).parent().attr('class') + '-bonus input').removeClass('bonus-bg-sotto');
+        $('#tabellone-advanced .bonus .' + $(item).parent().attr('class') + '-bonus input').val(bonusPoints * 2);
+        $('#tabellone-advanced .bonus .' + $(item).parent().attr('class') + '-bonus input').addClass('bonus-bg-sopra');
+        $('#tabellone-advanced .bonus .' + $(item).parent().attr('class') + '-bonus input').removeClass('bonus-bg-sotto');
     } else {
-        $('.bonus .' + $(item).parent().attr('class') + '-bonus input').val(bonusPoints);
-        $('.bonus .' + $(item).parent().attr('class') + '-bonus input').addClass('bonus-bg-sotto');
-        $('.bonus .' + $(item).parent().attr('class') + '-bonus input').removeClass('bonus-bg-sopra');
+        $('#tabellone-advanced .bonus .' + $(item).parent().attr('class') + '-bonus input').val(bonusPoints);
+        $('#tabellone-advanced .bonus .' + $(item).parent().attr('class') + '-bonus input').addClass('bonus-bg-sotto');
+        $('#tabellone-advanced .bonus .' + $(item).parent().attr('class') + '-bonus input').removeClass('bonus-bg-sopra');
     }
 
 };
@@ -100,7 +100,7 @@ let CalcoloAggiunto = item => {
 
 };
 
-let TotaleCheck = item => {
+let TotaleCheckAdvanced = item => {
 
     $('.' + $(item).parent().attr('class') + ' input').each( (index, item) => {
 
@@ -132,7 +132,7 @@ let Animate = (nomeColonna, classe) => {
     $('.' + nomeColonna + ' input').each( (index, item) => {
 
         let delay = index * 100;
-        $(item).delay(delay).addClass(classe,900).delay( 100 ).removeClass(classe,900);
+        $(item).delay(delay).addClass(classe,900).delay(100).removeClass(classe,900);
         
     });
 
@@ -176,15 +176,15 @@ let RisultatoCheck = () => {
             if ( isNaN( parseInt( $(item).val() )) ) {
                 return false;
             } else if( index == 4) {
-                $('.input-risultato-finale').prop('disabled', false);
-                $('.input-risultato-finale').addClass('active',1000)                
+                $('#tabellone-advanced .input-risultato-finale').prop('disabled', false);
+                $('#tabellone-advanced .input-risultato-finale').addClass('active',1000)                
             }
         });
     }, 3000);
     
 };
 
-$('.input-risultato-finale').click( () => { 
+$('#tabellone-advanced .input-risultato-finale').click( () => { 
     
     let totalPoints = 0;
     
@@ -198,15 +198,18 @@ $('.input-risultato-finale').click( () => {
         easing: "easeOutExpo",
         step: function () {
             var percentageVal = Math.round(this.percentage);
-            $('.input-risultato-finale').val(percentageVal);
+            $('#tabellone-advanced .input-risultato-finale').val(percentageVal);
         }
     }).promise().done(function () {
         // hard set the value after animation is done to be sure the value is correct
-        $('.input-risultato-finale').val(totalPoints);
-        if(totalPoints > parseInt(GetSettingsItem('high-score')))
+        $('#tabellone-advanced .input-risultato-finale').val(totalPoints);
+        if(totalPoints > parseInt(GetSettingsItem('high-score-advanced')))
         {
-            SetSettingsItem('high-score', totalPoints);
-            $('#high-score span').text(totalPoints);
+            SetSettingsItem('high-score-advanced', totalPoints);
+            $('#high-score-advanced span').text(totalPoints);
+            $("#tabellone-advanced #nuovo-record").fadeIn( "fast", function() {
+                $(this).delay(3000).fadeOut("fast");
+            });
         }
     });
     
