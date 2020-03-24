@@ -3,30 +3,6 @@ $(window).on('load', function () {
     $(".se-pre-con").fadeOut("slow");;
 });
 
-$('#button-play-advanced').click( e => {
-    e.preventDefault();
-    if (GetSettingsItem('username') === null)
-    {
-        if ($('#input-home').val() !== "")
-        {
-            SetSettingsItem('username', $('#input-home').val());
-            UpdateSettingsName($('#input-home').val());
-            $('#tabellone-classic').hide();
-            $('#tabellone-advanced').show();
-            $('.homepage').addClass('swiped');
-        }
-        else
-        {
-            $('#input-home').addClass('empty');
-        }
-    }
-    else
-    {
-        $('#tabellone-classic').hide();
-        $('#tabellone-advanced').show();
-        $('.homepage').addClass('swiped');
-    }
-});
 
 $('#button-play-classic').click( e => {
     e.preventDefault();
@@ -39,6 +15,12 @@ $('#button-play-classic').click( e => {
             $('#tabellone-classic').show();
             $('#tabellone-advanced').hide();
             $('.homepage').addClass('swiped');
+
+            setTimeout(function() {
+                $('#input-home').addClass('hide');
+                $('.message').removeClass('hide');
+                $('.message').text(CreaMessaggioRandom());
+            }, 300);
         }
         else
         {
@@ -49,6 +31,37 @@ $('#button-play-classic').click( e => {
     {
         $('#tabellone-classic').show();
         $('#tabellone-advanced').hide();
+        $('.homepage').addClass('swiped');
+    }
+});
+
+$('#button-play-advanced').click( e => {
+    e.preventDefault();
+    if (GetSettingsItem('username') === null)
+    {
+        if ($('#input-home').val() !== "")
+        {
+            SetSettingsItem('username', $('#input-home').val());
+            UpdateSettingsName($('#input-home').val());
+            $('#tabellone-classic').hide();
+            $('#tabellone-advanced').show();
+            $('.homepage').addClass('swiped');
+
+            setTimeout(function() {
+                $('#input-home').addClass('hide');
+                $('.message').removeClass('hide');
+                $('.message').text(CreaMessaggioRandom());
+            }, 300);
+        }
+        else
+        {
+            $('#input-home').addClass('empty');
+        }
+    }
+    else
+    {
+        $('#tabellone-classic').hide();
+        $('#tabellone-advanced').show();
         $('.homepage').addClass('swiped');
     }
 });
