@@ -69,7 +69,9 @@ $('#tabellone-classic .input-risultato-finale').click( () => {
     
     let totalPoints = 0;
     
-    $('.classic input').each( (index, item) => {
+    totalPoints +=  parseInt($('.classic-bonus input').val());
+
+    $('.combo input').each( (index, item) => {
         if (!isNaN( parseInt( $(item).val() )))
             totalPoints += parseInt( $(item).val() );
     });
