@@ -3,18 +3,18 @@
 	"name": "Yahtzee Game WebApp",
 	"icons": [
 	  {
-		"src": "/Yahtzee/img/manifest_icons/yahtzeeicon-192.png",
+		"src": "./img/manifest_icons/yahtzeeicon-192.png",
 		"type": "image/png",
 		"sizes": "192x192"
 	  },
 	  {
-		"src": "/Yahtzee/img/manifest_icons/yahtzeeicon-512.png",
+		"src": "./img/manifest_icons/yahtzeeicon-512.png",
 		"type": "image/png",
 		"sizes": "512x512"
 	  }
 	],
-	"start_url": "/Yahtzee/",
-	"scope": "/Yahtzee/",
+	"start_url": "./",
+	"scope": ".",
 	"background_color": "#51A687",
 	"theme_color": "#51A687",
 	"display": "fullscreen",
