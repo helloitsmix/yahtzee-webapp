@@ -20,9 +20,9 @@ Il tabellone segnapunti Yahtzee lo puoi trovare online a [questo indirizzo](), o
 ### Web App per Cellulare
 
 1. Utilizzando Chrome su Android o Safari su iOS vai a [questo indirizzo]()
-2. Attendi che venga caricato completamente quindi clicca _Aggiungi alla homescreen_
+2. Attendi che venga caricato completamente quindi clicca _Aggiungi a schermata Home_
   
-  
+<img src="./img/readme/add-homescreen.png" height="250">
   
 3. Gioca!
 
@@ -234,5 +234,3 @@ Per riempire questa casella, il giocatore deve ottenere cinque dadi con lo stess
 Il giocatore deve segnare la somma dei cinque dadi, a cui il sistema aggiungerà automaticamente 50 punti.
 
 > Con una combinazione di dadi `4-4-4-4-4` il giocatore può segnare 20 (+50) nella casella `Y`
-
-# FAQ
