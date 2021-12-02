@@ -4,12 +4,31 @@ Yahtzee è un gioco di strategia che si svolge con **5 dadi**, si può giocare i
 
 Questa applicazione punta a sostituire il classico blocchetto segnapunti (e matite) con un segnapunti completamente digitale, a portata di cellulare. 
 
-- [Regole Generali](#regole-generali)
-- [Modalità Classica](#modalità-classica)
-- [Modalità Avanzata](#modalità-avanzata)
-- [FAQ](#faq)
+- [Installazione](#installazione)
+- [Regole generali](#regole-generali)
+- [Modalità classica](#modalità-classica)
+- [Modalità avanzata](#modalità-avanzata)
 
-# Regole Generali
+# Installazione
+
+Il tabellone segnapunti Yahtzee lo puoi trovare online a [questo indirizzo](), oppure puoi scaricalo in locale su PC.
+
+### Web App per Cellulare
+
+  1. Utilizzando Chrome su Android o Safari su iOS vai a [questo indirizzo]()
+  2. Attendi che venga caricato completamente quindi clicca _Aggiungi alla homescreen_
+  <!-- foto -->
+  3. Gioca!
+
+### Come scaricare su PC
+
+  1. Scarica il file ZIP della repository
+  <!-- foto -->
+  2. Estrai la cartella con WinRAR o 7-Zip
+  3. Apri `index.html`
+  4. Gioca!
+
+# Regole generali
 
 #### L'OCCORRENTE
 
@@ -36,7 +55,7 @@ Se alla fine del turno di gioco non viene realizzata una delle possibili combina
 
 **È possibile e obbligatorio riempire soltanto una casella per turno.**
 
-# Modalità Classica
+# Modalità classica
 
 In questa modalità ogni giocatore segna i propri punti nel proprio tabellone formato da una colonna con 14 caselle.
 
@@ -50,7 +69,7 @@ Nella PARTE SUPERIORE del tabellone troviamo le caselle di somma. Il giocatore d
 
 > Con una combinazione di dadi `1-3-3-3-4` il giocatore può segnare 9 nella casella dei `3`
 
-##### BONUS
+##### `B` - BONUS
 
 La casella Bonus viene automaticamente calcolata sommando i punteggi delle combinazioni della parte superiore. Se il giocatore riesce a totalizzare 63 o più punti otterrà un bonus di 35 punti.
 
@@ -110,7 +129,7 @@ Il punteggio finale è la somma di tutti e cinque i dadi.
 
 > Con qualsiasi combinazione di dadi, esempio: `2-1-5-5-2` il giocatore può segnare 15 nella casella `CH`
 
-# Modalità Avanzata
+# Modalità avanzata
 
 In questa modalità ogni giocatore segna i suoi punti nel proprio tabellone formato da 5 colonne per un totale di 60 caselle.
 
@@ -158,7 +177,7 @@ Nella PARTE SUPERIORE del tabellone troviamo le caselle di somma. Il giocatore d
 
 > Con una combinazione di dadi `3-3-3-1-4` il giocatore può segnare 9 nella casella dei `3`
 
-##### BONUS
+##### `B` - BONUS
 
 La casella Bonus viene automaticamente calcolata sommando i punteggi delle combinazioni della parte superiore. Se il giocatore riesce a totalizzare 60 o più punti otterrà un bonus raddoppiato.
 
