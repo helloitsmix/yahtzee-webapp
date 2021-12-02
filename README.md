@@ -9,6 +9,8 @@ Questa applicazione punta a sostituire il classico blocchetto segnapunti (e mati
 - [Modalità classica](#modalità-classica)
 - [Modalità avanzata](#modalità-avanzata)
 
+[cover](./img/readme/cover.png)
+
 # Installazione
 
 Il tabellone segnapunti Yahtzee lo puoi trovare online a [questo indirizzo](), oppure puoi scaricalo in locale su PC.
