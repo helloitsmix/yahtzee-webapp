@@ -71,7 +71,7 @@ La modalità classica è più veloce della modalità avanzata.
 
 #### COMBINAZIONI - PARTE SUPERIORE
 
-##### SOMME DI NUMERI (1-2-3-4-5-6)
+##### `1-2-3-4-5-6` - SOMME DI NUMERI
 
 Nella PARTE SUPERIORE del tabellone troviamo le caselle di somma. Il giocatore deve sommare solo i dadi uguali tra di loro e segnarne il valore nella relativa casella.
 
@@ -179,7 +179,7 @@ Il punteggio totale della colonna degli annunciati verrà triplicato a fine part
 
 #### COMBINAZIONI - PARTE SUPERIORE
 
-##### SOMME DI NUMERI (1-2-3-4-5-6)
+##### `1-2-3-4-5-6` - SOMME DI NUMERI
 
 Nella PARTE SUPERIORE del tabellone troviamo le caselle di somma. Il giocatore deve sommare solo i dadi uguali tra di loro e segnarne il valore nella relativa casella.
 
