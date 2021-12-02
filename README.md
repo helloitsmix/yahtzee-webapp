@@ -29,18 +29,16 @@ Ogni giocatore lancia un dado: chi totalizza il punteggio più alto parte per pr
 Al primo lancio il giocatore tira **tutti e cinque i dadi**.
 
 Nei successivi due lanci il giocatore può scegliere di trattenere uno o più dadi favorevoli ad ottenere la combinazione desiderata. 
-Il giocatore può anche scegliere di non trattenere alcun dado o di non utilizzare successivi lanci, nel caso ad esempio si sia già realizzata una combinazione utile.
+Può anche scegliere di non trattenere alcun dado o di non utilizzare successivi lanci, nel caso ad esempio si sia già realizzata una combinazione utile.
 
 Al termine dei lanci il giocatore deve segnare **obbligatoriamente** un punteggio in una delle caselle del segnapunti non ancora utilizzata.
-Se alla fine del turno di gioco non viene realizzata una delle possibili combinazioni ancora "libera" sul tabellone, il giocatore deve segnare "0" (zero) in una delle caselle ancora a sua disposizione.
+Se alla fine del turno di gioco non viene realizzata una delle possibili combinazioni ancora "libera" sul tabellone, oppure decida di cancellare una casella, il giocatore deve segnare "0" (zero) in una delle caselle ancora a sua disposizione.
 
 **È possibile e obbligatorio riempire soltanto una casella per turno.**
 
 # Modalità Classica
 
-In questa modalità ogni giocatore segna i propri punti in un tabellone formato da una colonna con 14 caselle.
-
-A ogni turno il giocatore è libero di scegliere quale casella riempire in base al miglior punteggio ottenuto. Nel caso in cui non riesca a registrare nessun punteggio utile (oppure decida di non farlo) il giocatore deve segnare uno "0" in una delle caselle.
+In questa modalità ogni giocatore segna i propri punti nel proprio tabellone formato da una colonna con 14 caselle.
 
 La modalità classica è più veloce della modalità avanzata.
 
@@ -55,6 +53,8 @@ Nella PARTE SUPERIORE del tabellone troviamo le caselle di somma. Il giocatore d
 ###### BONUS
 
 La casella Bonus viene automaticamente calcolata sommando i punteggi delle combinazioni della parte superiore. Se il giocatore riesce a totalizzare 63 o più punti otterrà un bonus di 35 punti.
+
+#### COMBINAZIONI - PARTE INFERIORE
 
 ###### SP - SCALA PICCOLA
 
@@ -112,6 +112,28 @@ Il punteggio finale è la somma di tutti e cinque i dadi.
 
 # Modalità Avanzata
 
+In questa modalità ogni giocatore segna i propri punti nel proprio tabellone formato da 5 colonne per un totale di 60 caselle.
 
+La modalità avanzata è più lunga della modalità classica.
+
+#### COLONNE
+
+###### ↓ - TOP DOWN
+
+Nella prima colonna il giocatore è obbligato a riempire le caselle dall'alto verso il basso.
+
+###### ↑ - DOWN TOP
+
+Nella seconda colonna il giocatore è obbligato a riempire le caselle dal basso verso l'alto.
+
+> NB. Il giocatore, nel suo turno, può decidere di segnare "0" per cancellare una casella.
+
+###### L - LIBERI
+
+Come nella modalità classica, nella terza colonna il giocatore è **libero** di riempire le caselle a suo piacimento.
+
+#### COMBINAZIONI - PARTE SUPERIORE
+
+#### COMBINAZIONI - PARTE INFERIORE
 
 # FAQ
