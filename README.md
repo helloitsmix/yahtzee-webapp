@@ -1,5 +1,7 @@
 # Yahtzee
 
+![cover](./img/readme/cover.png)
+
 Yahtzee è un gioco di strategia che si svolge con **5 dadi**, si può giocare in una o più persone: non c'è un numero massimo di giocatori.
 
 Questa applicazione punta a sostituire il classico blocchetto segnapunti (e matite) con un segnapunti completamente digitale, a portata di cellulare. 
@@ -9,7 +11,7 @@ Questa applicazione punta a sostituire il classico blocchetto segnapunti (e mati
 - [Modalità classica](#modalità-classica)
 - [Modalità avanzata](#modalità-avanzata)
 
-[cover](./img/readme/cover.png)
+![screen](./img/readme/screen.png)
 
 # Installazione
 
@@ -17,18 +19,22 @@ Il tabellone segnapunti Yahtzee lo puoi trovare online a [questo indirizzo](), o
 
 ### Web App per Cellulare
 
-  1. Utilizzando Chrome su Android o Safari su iOS vai a [questo indirizzo]()
-  2. Attendi che venga caricato completamente quindi clicca _Aggiungi alla homescreen_
-  <!-- foto -->
-  3. Gioca!
+1. Utilizzando Chrome su Android o Safari su iOS vai a [questo indirizzo]()
+2. Attendi che venga caricato completamente quindi clicca _Aggiungi alla homescreen_
+  
+  
+  
+3. Gioca!
 
 ### Come scaricare su PC
 
-  1. Scarica il file ZIP della repository
-  <!-- foto -->
-  2. Estrai la cartella con WinRAR o 7-Zip
-  3. Apri `index.html`
-  4. Gioca!
+1. Scarica il file ZIP della repository
+ 
+![zip](./img/readme/download-zip.png)
+ 
+2. Estrai la cartella con WinRAR o 7-Zip
+3. Apri `index.html`
+4. Gioca!
 
 # Regole generali
 
