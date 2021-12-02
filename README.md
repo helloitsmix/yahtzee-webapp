@@ -48,7 +48,7 @@ La modalità classica è più veloce della modalità avanzata.
 
 Nella PARTE SUPERIORE del tabellone troviamo le caselle di somma. Il giocatore deve sommare solo i dadi uguali tra di loro e segnarne il valore nella relativa casella.
 
-> Con una combinazione di dadi `3-1-3-3-4` il giocatore può segnare 9 nella casella dei `3`
+> Con una combinazione di dadi `1-3-3-3-4` il giocatore può segnare 9 nella casella dei `3`
 
 ##### BONUS
 
@@ -61,28 +61,28 @@ La casella Bonus viene automaticamente calcolata sommando i punteggi delle combi
 Per riempire questa casella, il giocatore deve ottenere una combinazione di quattro dadi in ordine numerico.
 Il punteggio finale è sempre 30.
 
-> Con una combinazione di dadi `2-1-3-6-4` il giocatore può segnare 30 nella casella `SP`
+> Con una combinazione di dadi `3-4-5-6-1` il giocatore può segnare 30 nella casella `SP`
 
 ##### `SG` - SCALA GRANDE
 
 Per riempire questa casella, il giocatore deve ottenere una combinazione di cinque dadi in ordine numerico.
 Il punteggio finale è sempre 40.
 
-> Con una combinazione di dadi `2-1-3-5-4` il giocatore può segnare 40 nella casella `SG`
+> Con una combinazione di dadi `1-2-3-4-5` il giocatore può segnare 40 nella casella `SG`
 
 ##### `3P` - TRE PEZZI
 
 Per riempire questa casella, il giocatore deve ottenere tre dadi con lo stesso valore.
 Il punteggio finale è la somma di tutti e cinque i dadi.
 
-> Con una combinazione di dadi `5-5-2-5-4` il giocatore può segnare 21 nella casella `3P`
+> Con una combinazione di dadi `5-5-5-2-4` il giocatore può segnare 21 nella casella `3P`
 
 ##### `4P` - QUATTRO PEZZI
 
 Per riempire questa casella, il giocatore deve ottenere quattro dadi con lo stesso valore.
 Il punteggio finale è la somma di tutti e cinque i dadi.
 
-> Con una combinazione di dadi `5-5-4-5-5` il giocatore può segnare 24 nella casella `4P`
+> Con una combinazione di dadi `5-5-5-5-4` il giocatore può segnare 24 nella casella `4P`
 
 ##### `F` - FULL
 
@@ -148,7 +148,7 @@ Il giocatore una volta annunciata la combinazione è costretto a segnare su quel
 
 Il punteggio totale della colonna degli annunciati verrà triplicato a fine partita.
 
-> Al primo tiro esce questa combinazione di dadi `2-3-2-6-2` il giocatore può annunciare poker e continuare coi restanti due tiri. Se alla fine dei tiri ha ottenuto poker segna il punteggio, altrimenti segna "0".
+> Al primo tiro esce questa combinazione di dadi `2-2-2-3-6` il giocatore può annunciare poker e continuare coi restanti due tiri. Se alla fine dei tiri ha ottenuto poker segna il punteggio, altrimenti segna "0".
 
 #### COMBINAZIONI - PARTE SUPERIORE
 
@@ -156,7 +156,7 @@ Il punteggio totale della colonna degli annunciati verrà triplicato a fine part
 
 Nella PARTE SUPERIORE del tabellone troviamo le caselle di somma. Il giocatore deve sommare solo i dadi uguali tra di loro e segnarne il valore nella relativa casella.
 
-> Con una combinazione di dadi `3-1-3-3-4` il giocatore può segnare 9 nella casella dei `3`
+> Con una combinazione di dadi `3-3-3-1-4` il giocatore può segnare 9 nella casella dei `3`
 
 ##### BONUS
 
@@ -170,7 +170,7 @@ Per riempire questa casella, il giocatore deve ottenere una combinazione di cinq
 
 Il giocatore deve segnare la somma dei dadi, a cui il sistema aggiungerà automaticamente 30 punti.
 
-> Con una combinazione di dadi `2-1-3-5-4` il giocatore può segnare 15 (+30) nella casella `S`
+> Con una combinazione di dadi `1-2-3-4-5` il giocatore può segnare 15 (+30) nella casella `S`
 
 ##### `F` - FULL
 
@@ -186,7 +186,7 @@ Per riempire questa casella, il giocatore deve ottenere quattro dadi con lo stes
 
 Il giocatore deve segnare la somma dei quattro dadi, a cui il sistema aggiungerà automaticamente 20 punti.
 
-> Con una combinazione di dadi `4-4-2-4-4` il giocatore può segnare 16 (+20) nella casella `P`
+> Con una combinazione di dadi `4-4-4-4-2` il giocatore può segnare 16 (+20) nella casella `P`
 
 ##### `m` - minima
 
@@ -198,7 +198,7 @@ La minima non ha bisogno di combinazioni, è la somma di tutti e cinque i dadi. 
 
 La massima non ha bisogno di combinazioni, è la somma di tutti e cinque i dadi. Deve essere più alta della minima.
 
-> Con qualsiasi combinazione di dadi, esempio: `6-5-4-4-2` il giocatore può segnare 21 nella casella `M`
+> Con qualsiasi combinazione di dadi, esempio: `4-5-4-6-2` il giocatore può segnare 21 nella casella `M`
 
 ##### `Y` - YAHTZEE
 
