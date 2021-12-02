@@ -1,4 +1,4 @@
-# Yahtzee
+# Yahtzee :game_die:
 
 ![cover](./img/readme/cover.png)
 
