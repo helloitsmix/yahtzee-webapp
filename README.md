@@ -21,8 +21,8 @@ Il tabellone segnapunti Yahtzee lo puoi trovare online a [questo indirizzo](), o
 
 1. Utilizzando Chrome su Android o Safari su iOS vai a [questo indirizzo]()
 2. Attendi che venga caricato completamente quindi clicca `Aggiungi a schermata Home`
-  
-<img src="./img/readme/add-homescreen.png" height="250">
+ 
+![homescreen](./img/readme/add-homescreen.png)
   
 3. Gioca!
 
