@@ -67,7 +67,7 @@ Se alla fine del turno di gioco non viene realizzata una delle possibili combina
 
 # Modalità classica
 
-In questa modalità ogni giocatore segna i propri punti nel proprio tabellone formato da una colonna con 14 caselle.
+In questa modalità ogni giocatore segna i punti nel proprio tabellone formato da una colonna con 14 caselle.
 
 La modalità classica è più veloce della modalità avanzata.
 
@@ -141,7 +141,7 @@ Il punteggio finale è la somma di tutti e cinque i dadi.
 
 # Modalità avanzata
 
-In questa modalità ogni giocatore segna i suoi punti nel proprio tabellone formato da 5 colonne per un totale di 60 caselle.
+In questa modalità ogni giocatore segna i punti nel proprio tabellone formato da 5 colonne per un totale di 60 caselle.
 
 La modalità avanzata è più lunga della modalità classica.
 
