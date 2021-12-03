@@ -53,9 +53,9 @@ Ogni giocatore lancia un dado: chi totalizza il punteggio più alto parte per pr
 
 #### SVOLGIMENTO DI UN TURNO
 
-Ad ogni turno il giocatore può lanciare i dadi tre volte.
+Ad ogni turno il giocatore può lanciare i dadi **tre volte**.
 
-Al primo lancio il giocatore tira **tutti e cinque i dadi**.
+Al primo lancio il giocatore tira tutti e cinque i dadi.
 
 Nei successivi due lanci il giocatore può scegliere di trattenere uno o più dadi favorevoli ad ottenere la combinazione desiderata. 
 Può anche scegliere di non trattenere alcun dado o di non utilizzare successivi lanci, nel caso ad esempio si sia già realizzata una combinazione utile.
