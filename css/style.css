@@ -389,3 +389,28 @@ input:disabled {
     background: url('../img/gif/dice.gif') center no-repeat #02dbfa;
     background-size: 75%;
 }
+
+#dices-container {
+    /* background-color: lightcoral; */
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.dice {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    /* background-color: lightseagreen; */
+}
+
+.throw-dice-container {
+    margin-top: 20px;
+}
+
+.dice img {
+    width: 60px; height: 60px;
+}

@@ -89,7 +89,7 @@ let CreaMessaggioRandom = () => {
             messaggio = "Ti senti fortunato oggi?";
             break;
         case 5:
-            messaggio = "Finalmente sei tornato ^.^";
+            messaggio = "Finalmente sei qui ^.^";
             break;
         case 6:
             messaggio = username + ", bel nome";
