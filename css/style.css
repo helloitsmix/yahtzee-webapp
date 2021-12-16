@@ -431,3 +431,14 @@ input:disabled {
 .dice img {
     width: 60px; height: 60px;
 }
+
+.add-button {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    z-index: 1000;
+    position: fixed;
+    font-size: 30px;
+    background-color: #c62828;
+    border: none; color: #fff;
+}

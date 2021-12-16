@@ -1,6 +1,7 @@
 {
 	"short_name": "Yahtzee",
 	"name": "Yahtzee Game WebApp",
+	"description": "Digital scoreboard for the Yahtzee game.",
 	"icons": [
 	  {
 		"src": "./img/manifest_icons/yahtzeeicon-192.png",
