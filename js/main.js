@@ -15,6 +15,7 @@ let colori = [
 
 let defaultSettings = {
     'table-size': 'large',
+    'virtual-dices': 'true',
     'high-score-classic': 0,
     'high-score-advanced': 0,
     'username': null,
@@ -99,6 +100,7 @@ let CheckIniziale = () => {
     if (GetSettings() === null)
     {
         localStorage.setItem( 'settings', JSON.stringify(defaultSettings) );
+        $('#slider-dadi').prop('checked', true);
     }
     else
     {
@@ -115,6 +117,14 @@ let CheckIniziale = () => {
         {
             SetGrigliaSmall();
             $('#slider-griglia').prop('checked', true);
+        }
+
+        if (GetSettingsItem('virtual-dices') === 'true') {
+            $('#slider-dadi').prop('checked', true);
+            $('#dices-container').show();
+        } else {
+            $('#slider-dadi').prop('checked', false);
+            $('#dices-container').hide();
         }
 
         if (GetSettingsItem('high-score-classic') !== 0)

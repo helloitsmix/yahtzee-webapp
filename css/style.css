@@ -442,3 +442,27 @@ input:disabled {
     background-color: #c62828;
     border: none; color: #fff;
 }
+
+.how-to-play {
+    z-index: 999;
+    position: absolute;
+    right: 0; top: 0;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.how-to-play a {
+    color: #000;
+    border: 3px solid #000;
+    font-weight: bold;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    border-radius: 100%;
+    font-size: 31px;
+    text-align: center;
+    text-decoration: none;
+    -webkit-box-shadow: inset -1px -1px 1px 0px rgba(0,0,0,0.25);
+    -moz-box-shadow: inset -1px -1px 1px 0px rgba(0,0,0,0.25);
+    box-shadow: inset -1px -1px 1px 0px rgba(0,0,0,0.25);
+}

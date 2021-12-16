@@ -20,7 +20,9 @@ $('#nuova-partita').click(function(e) {
     return false;
 });
 
-$('.slider').click(function(e) { 
+
+
+$('.grandezza-griglia .slider').click(function(e) { 
 
     if($('#slider-griglia').prop('checked') === false)
     {
@@ -31,6 +33,21 @@ $('.slider').click(function(e) {
     {
         SetGrigliaLarge();
         SetSettingsItem('table-size', 'large');
+    }
+
+});
+
+$('.on-off-dadi .slider').click(function(e) { 
+
+    if($('#slider-dadi').prop('checked') === false)
+    {
+        $('#dices-container').show();
+        SetSettingsItem('virtual-dices', 'true');
+    }
+    else
+    {
+        $('#dices-container').hide();
+        SetSettingsItem('virtual-dices', 'false');
     }
 
 });
