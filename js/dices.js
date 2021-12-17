@@ -31,6 +31,11 @@ dices = {
         else
             $(".dice").hide();
 
+        if (dices.launch === 3)
+            $("#throw-dice-bg img").attr("src", "./img/dices/throw-dice-retry.png");
+        else
+            $("#throw-dice-bg img").attr("src", "./img/dices/throw-dice.png");
+
         $("#throw-dice").css({background: dices.circle_style[dices.launch]});
 
         for (let i = 0; i < 5; i++) {
@@ -45,6 +50,8 @@ dices = {
     },
 
     shuffle: function() {
+
+       
         
         if (dices.launch === 3) {
             dices.clear();
