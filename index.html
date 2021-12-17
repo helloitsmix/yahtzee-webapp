@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Yahtzee</title>
-	<link rel="manifest" href="manifest.json" crossorigin="use-credentials">
+	<!-- <link rel="manifest" href="manifest.json" crossorigin="use-credentials"> -->
+	<link rel="manifest" href="manifest.webmanifest">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 	<link rel="stylesheet" href="css/webfonts.css">
 	<link rel="stylesheet" href="css/animations.css">
@@ -16,7 +17,7 @@
 	
 	<div class="se-pre-con"></div>
 
-	<button class="add-button">+ Add to home screen</button>
+	<!-- <button class="add-button">+ Add to home screen</button> -->
 	
 	<div class="homepage">
 		<div class="how-to-play">
@@ -91,32 +92,32 @@
 		</div>
 	</div>
 
+	<div id="dices-container">
+		<div class="dice" id="dice-1" style="display: none">
+			<img src="">
+		</div>
+		<div class="dice" id="dice-2" style="display: none">
+			<img src="">
+		</div>
+		<div class="dice" id="dice-3" style="display: none">
+			<img src="">
+		</div>
+		<div class="dice" id="dice-4" style="display: none">
+			<img src="">
+		</div>
+		<div class="dice" id="dice-5" style="display: none">
+			<img src="">
+		</div>
+
+		<div class="throw-dice-container" id="throw-dice">
+			<div id="throw-dice-bg">
+				<img src="./img/dices/throw-dice.png">
+			</div>
+		</div>
+	</div>
 	
 	<div class="tabellone" id="tabellone-classic">
 
-		<div id="dices-container">
-			<div class="dice" id="dice-1" style="display: none">
-				<img src="">
-			</div>
-			<div class="dice" id="dice-2" style="display: none">
-				<img src="">
-			</div>
-			<div class="dice" id="dice-3" style="display: none">
-				<img src="">
-			</div>
-			<div class="dice" id="dice-4" style="display: none">
-				<img src="">
-			</div>
-			<div class="dice" id="dice-5" style="display: none">
-				<img src="">
-			</div>
-	
-			<div class="throw-dice-container" id="throw-dice">
-				<div id="throw-dice-bg">
-					<img src="./img/dices/throw-dice.png">
-				</div>
-			</div>
-		</div>
 		
 		<table>
 
@@ -389,7 +390,7 @@
 		
 	</div>
 	
-	<script src="js/index.js"></script>
+	<!-- <script src="js/index.js"></script> -->
 	<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
