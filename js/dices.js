@@ -1,3 +1,23 @@
+// document.body.onkeyup = function(e){
+//     if(e.keyCode == 32)
+//         $("#throw-dice").click();
+
+//     if(e.keyCode == 49)
+//         $(".dice").eq(0).click();
+
+//     if(e.keyCode == 50)
+//         $(".dice").eq(1).click();
+
+//     if(e.keyCode == 51)
+//         $(".dice").eq(2).click();
+
+//     if(e.keyCode == 52)
+//         $(".dice").eq(3).click();
+
+//     if(e.keyCode == 53)
+//         $(".dice").eq(4).click();
+// }
+
 dices = {
     launch : 0,
 
