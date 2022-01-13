@@ -320,7 +320,7 @@ input:disabled {
 }    
 .input-container {
     display: flex;
-    flex: 6;
+    flex: 5;
     align-items: center; justify-content: center;
 }
 .input-container .message {
@@ -365,6 +365,9 @@ input:disabled {
 }
 .button-container #button-play-classic {
     bottom: 105px;
+}
+.homepadding {
+    flex: 2;
 }
 .hide {
     display: none;
