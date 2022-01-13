@@ -66,17 +66,12 @@ input:disabled {
 }
 .tabellone
 {
-    /* background-image: url('../img/bg-green.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover; */
     min-height: 100vh;
     padding-top: 15px;
 }
 .tabellone.blurred {
     filter: blur(2px) grayscale(20%);
     -webkit-filter: blur(2px) grayscale(20%);
-    box-shadow: 0 0 5px 5px #000000;
 }
 .settings-page {
     width: 90%;
