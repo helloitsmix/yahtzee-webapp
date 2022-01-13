@@ -100,7 +100,7 @@ let CheckIniziale = () => {
     if (GetSettings() === null)
     {
         localStorage.setItem( 'settings', JSON.stringify(defaultSettings) );
-        $('#slider-dadi').prop('checked', true);
+        // $('#slider-dadi').prop('checked', true);
     }
     else
     {

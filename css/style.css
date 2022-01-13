@@ -291,8 +291,13 @@ input:disabled {
 .homepage {
     width: 100vw;
     height: 100vh;
+
     position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     z-index: 999;
+
     background: url('../img/bgs/bg-home.jpg');
     background-position: center;
     background-repeat: no-repeat;
@@ -309,7 +314,7 @@ input:disabled {
     transform: translateY(calc(-120vh));
 }
 .logo-container {
-    width: 100%; height: 35%;
+    flex: 4;
 }
 .logo-container .logo {
     background: url('../img/logo-yaz-dices.png');
@@ -317,23 +322,16 @@ input:disabled {
     background-repeat: no-repeat;
     background-size: contain;
     height: 100%;
-    margin: 0 5%;
 }    
 .input-container {
-    width: 100%; height: 35%;
-    position: relative;
+    display: flex;
+    flex: 6;
+    align-items: center; justify-content: center;
 }
 .input-container .message {
-    width: 90%;
-    height: auto;
-    margin: auto;
-    text-align: center;
-    top: 20%;
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
     font-size: 40px;
+    margin: 10px;
+    text-align: center;
 }
 .input-container #input-home {
     width: 80%; height: 55px;
@@ -351,18 +349,15 @@ input:disabled {
     border: 2px red solid;
 }
 .button-container {
-    width: 100%; height: 30%;
-    position: relative;
+    flex: 3;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
 }
 .button-container .button-play {
     width: 90%;
     padding: 5px 15px;
-    margin: auto;
-    text-align: center;
-    position: absolute;
-    bottom: 10%;
-    left: 0;
-    right: 0;
     border: 4px solid black;
     border-radius: 5px;
     color: white;
