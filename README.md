@@ -43,7 +43,7 @@ Il tabellone segnapunti Yahtzee lo puoi trovare online a [questo indirizzo](http
 #### L'OCCORRENTE
 
 - 5 dadi
-- Yahtzee Web App
+- [Yahtzee Web App](https://lorenzovezzaro.it/yahtzee/)
 
 #### OBIETTIVO
 
