@@ -36,6 +36,8 @@ Il tabellone segnapunti Yahtzee lo puoi trovare online a [questo indirizzo](http
 3. Apri `index.html`
 4. Gioca!
 
+
+
 # Regole generali
 
 #### L'OCCORRENTE
@@ -64,6 +66,12 @@ Al termine dei lanci il giocatore deve segnare **obbligatoriamente** un punteggi
 Se alla fine del turno di gioco non viene realizzata una delle possibili combinazioni ancora "libera" sul tabellone, oppure decida di cancellare una casella, il giocatore deve segnare "0" (zero) in una delle caselle ancora a sua disposizione.
 
 **È possibile e obbligatorio riempire soltanto una casella per turno.**
+
+#### DADI VIRTUALI
+
+Dall'ultimo aggiornamento è possibile giocare con i dadi virtuali a schermo, in caso quelli fisici non siano reperibili; basterà attivarli dal riquadro impostazioni. Consiglio comunque di usare i dadi fisici per un divertimento maggiore.
+
+![screen2](./img/readme/screen2.png)
 
 # Modalità classica
 
