@@ -15,11 +15,11 @@ Questa applicazione punta a sostituire il classico blocchetto segnapunti (e mati
 
 # Installazione
 
-Il tabellone segnapunti Yahtzee lo puoi trovare online a [questo indirizzo](https://lorenzovezzaro.it/yahtzee/), oppure puoi scaricalo in locale su PC.
+Il tabellone segnapunti Yahtzee lo puoi trovare online a [questo indirizzo](https://lorenzovezzaro.it/webapps/yahtzee/), oppure puoi scaricalo in locale su PC.
 
 ### Web App per Cellulare
 
-1. Utilizzando Chrome su Android o Safari su iOS vai a [questo indirizzo](https://lorenzovezzaro.it/yahtzee/)
+1. Utilizzando Chrome su Android o Safari su iOS vai a [questo indirizzo](https://lorenzovezzaro.it/webapps/yahtzee/)
 2. Attendi che venga caricato completamente quindi clicca `Aggiungi a schermata Home`
 
 ![homescreen](./img/readme/add-homescreen.png)
@@ -43,7 +43,7 @@ Il tabellone segnapunti Yahtzee lo puoi trovare online a [questo indirizzo](http
 #### L'OCCORRENTE
 
 - 5 dadi
-- [Yahtzee Web App](https://lorenzovezzaro.it/yahtzee/)
+- [Yahtzee Web App](https://lorenzovezzaro.it/webapps/yahtzee/)
 
 #### OBIETTIVO
 
